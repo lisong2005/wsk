@@ -1,0 +1,14 @@
+wpay_sdk/.classpath
+wpay_sdk/.project
+wpay_sdk/.settings
+wpay_sdk/target
+wpay_sdk/bin
+wpay_sdk/**/*.orig
+
+
+
+
+
+
+
+
