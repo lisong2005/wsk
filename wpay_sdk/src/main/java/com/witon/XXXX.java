@@ -2,7 +2,7 @@
  * Witontek.com.
  * Copyright (c) 2012-2017 All Rights Reserved.
  */
-package com.witon.wpay.util;
+package com.witon;
 
 /**
  * 
