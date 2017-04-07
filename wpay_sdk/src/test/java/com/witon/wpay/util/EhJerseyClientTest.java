@@ -1,6 +1,7 @@
 package com.witon.wpay.util;
 
 import javax.ws.rs.client.Client;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
@@ -12,6 +13,9 @@ import javax.ws.rs.core.MediaType;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.witon.wpay.util.model.BaseRequest;
+import com.witon.wpay.util.model.BaseResponse;
 
 /**
  * 
@@ -36,6 +40,23 @@ public class EhJerseyClientTest {
             WebTarget target = client.target("http://localhost:8080/wpay/").path("success.json");
             String resp = target.request(MediaType.APPLICATION_JSON_TYPE).get(String.class);
             logger.info("{}", resp);
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_post() {
+        logger.info("");
+        try {
+            Client client = EhJerseyClient.getJerseyClient();
+            WebTarget target = client.target("http://localhost:8090/wpay/rest").path("gateway.do");
+
+            BaseRequest req = new BaseRequest();
+            BaseResponse restResult = target.request(MediaType.APPLICATION_JSON_TYPE)
+                .post(Entity.json(req), BaseResponse.class);
+
+            logger.info("{}", restResult);
         } catch (Exception e) {
             logger.error("", e);
         }
