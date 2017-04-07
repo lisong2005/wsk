@@ -4,6 +4,8 @@
  */
 package com.witon.wpay.util;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -12,7 +14,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * @author song.li@witontek.com
  * @version $Id: BaseModel.java, v 0.1 2017年4月6日 下午3:27:33 song.li@witontek.com Exp $
  */
-public class BaseModel {
+public class BaseModel implements Serializable {
+
+    /**  */
+    private static final long serialVersionUID = -8522690745699575210L;
 
     /** 
      * @see java.lang.Object#toString()
