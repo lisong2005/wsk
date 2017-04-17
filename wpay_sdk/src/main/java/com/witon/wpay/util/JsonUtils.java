@@ -17,7 +17,7 @@ import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
  * @author song.li@witontek.com
  * @version $Id: JsonUtil.java, v 0.1 2016年8月23日 上午8:33:25 song.li@witontek.com Exp $
  */
-public class JsonUtil {
+public class JsonUtils {
 
     /**
      * 
@@ -25,10 +25,14 @@ public class JsonUtil {
      * @return
      * @throws JsonProcessingException
      */
-    public static String convertObjToJson(Object obj) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JaxbAnnotationModule());
-        return mapper.writeValueAsString(obj);
+    public static String convertObjToJson(Object obj) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JaxbAnnotationModule());
+            return mapper.writeValueAsString(obj);
+        } catch (JsonProcessingException e) {
+            return null;
+        }
     }
 
     /**
@@ -40,11 +44,13 @@ public class JsonUtil {
      * @throws JsonMappingException
      * @throws IOException
      */
-    public static <T> T convertJsonToObj(String jsonStr, Class<T> clazz) throws JsonParseException,
-                                                                         JsonMappingException,
-                                                                         IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JaxbAnnotationModule());
-        return mapper.readValue(jsonStr, clazz);
+    public static <T> T convertJsonToObj(String jsonStr, Class<T> clazz) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JaxbAnnotationModule());
+            return mapper.readValue(jsonStr, clazz);
+        } catch (IOException e) {
+            return null;
+        }
     }
 }

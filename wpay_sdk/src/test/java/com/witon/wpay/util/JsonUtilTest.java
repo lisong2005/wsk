@@ -31,9 +31,9 @@ public class JsonUtilTest {
             p.setName("xx");
             logger.info("{}", p);
 
-            String convertObjToJson = JsonUtil.convertObjToJson(p);
+            String convertObjToJson = JsonUtils.convertObjToJson(p);
             logger.info("{}", convertObjToJson);
-            logger.info("{}", JsonUtil.convertJsonToObj(convertObjToJson, Person.class));
+            logger.info("{}", JsonUtils.convertJsonToObj(convertObjToJson, Person.class));
         } catch (Exception e) {
             logger.error("", e);
         }

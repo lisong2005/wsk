@@ -24,7 +24,7 @@ public class WxSpJspayCreateReq extends AbstractWitonRequest<SpJspayCreateReq, S
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.jspay.create";
     }
 
     /** 

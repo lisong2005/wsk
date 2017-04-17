@@ -29,8 +29,6 @@ public class WitonResponse<T> extends BaseModel {
 
     private T                 bizResp;
 
-    private Class<T>          bizRespClass;
-
     /**
      * Getter method for property <tt>code</tt>.
      * 
@@ -191,15 +189,6 @@ public class WitonResponse<T> extends BaseModel {
      */
     public void setBizResp(T bizResp) {
         this.bizResp = bizResp;
-    }
-
-    /**
-     * Getter method for property <tt>bizRespClass</tt>.
-     * 
-     * @return property value of bizRespClass
-     */
-    public Class<T> getBizRespClass() {
-        return bizRespClass;
     }
 
 }
