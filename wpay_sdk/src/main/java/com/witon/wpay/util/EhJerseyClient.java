@@ -4,16 +4,8 @@
  */
 package com.witon.wpay.util;
 
-import java.security.SecureRandom;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.logging.Level;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Feature;
@@ -77,48 +69,6 @@ public class EhJerseyClient {
      */
     public static Client getJerseyClient() {
         return CLIENT;
-    }
-
-    public static Client getNewJerseyClient() {
-        return ClientBuilder.newClient(CLIENT_CONFIG);
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public static Client getSSLTrustJerseyClient() {
-        try {
-
-            HostnameVerifier verifier = new HostnameVerifier() {
-                public boolean verify(String hostname, SSLSession session) {
-                    return true;
-                }
-            };
-
-            TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
-
-                public X509Certificate[] getAcceptedIssuers() {
-                    return null;
-                }
-
-                public void checkServerTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-
-                public void checkClientTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-            } };
-            SSLContext sslContext = SSLContext.getInstance(PROTOCOL);
-            sslContext.init(null, tm, new SecureRandom());
-
-            return ClientBuilder.newBuilder().hostnameVerifier(verifier).sslContext(sslContext)
-                .withConfig(CLIENT_CONFIG).build();
-        } catch (Exception e) {
-            logger.error("", e);
-            return null;
-        }
     }
 
 }
