@@ -13,8 +13,10 @@ import com.witon.wpay.util.BaseModel;
  */
 public class Person extends BaseModel {
 
-    private int    age;
-    private String name;
+    /**  */
+    private static final long serialVersionUID = -6878116386877588890L;
+    private int               age;
+    private String            name;
 
     /**
      * Getter method for property <tt>age</tt>.
