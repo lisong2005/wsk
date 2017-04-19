@@ -6,6 +6,8 @@ package com.witon.wpay.util;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -26,6 +28,9 @@ public class JsonUtils {
      * @throws JsonProcessingException
      */
     public static String convertObjToJson(Object obj) {
+        if (obj == null) {
+            return null;
+        }
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JaxbAnnotationModule());
@@ -45,6 +50,9 @@ public class JsonUtils {
      * @throws IOException
      */
     public static <T> T convertJsonToObj(String jsonStr, Class<T> clazz) {
+        if (StringUtils.isBlank(jsonStr) || clazz == null) {
+            return null;
+        }
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JaxbAnnotationModule());
