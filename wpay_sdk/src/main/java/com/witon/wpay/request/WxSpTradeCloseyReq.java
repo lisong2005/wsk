@@ -24,7 +24,7 @@ public class WxSpTradeCloseyReq extends AbstractWitonRequest<SpTradeCloseyReq, S
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.close";
     }
 
     /** 

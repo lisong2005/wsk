@@ -24,7 +24,7 @@ public class WxSpTradeQueryReq extends AbstractWitonRequest<SpTradeQueryReq, SpT
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.query";
     }
 
     /** 

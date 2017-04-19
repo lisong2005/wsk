@@ -11,6 +11,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -107,9 +108,12 @@ public class DefaultWitonClient implements WitonClient {
                 .post(Entity.json(jsonReq.toString()), WitonResponse.class);
             logger.info("{}", resp);
 
-            boolean verifyResult = SignUtils.verifySignRSA256(resp, resp.getSign(), witonPubKey);
-            if (verifyResult == false) {
-                throw new RuntimeException("verify sign error");
+            if (StringUtils.isNotBlank(resp.getRespContent())) {
+                boolean verifyResult = SignUtils.verifySignRSA256(resp, resp.getSign(),
+                    witonPubKey);
+                if (verifyResult == false) {
+                    throw new RuntimeException("verify sign error");
+                }
             }
 
             resp.setBizResp(

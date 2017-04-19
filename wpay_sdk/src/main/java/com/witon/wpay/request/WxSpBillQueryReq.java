@@ -25,7 +25,7 @@ public class WxSpBillQueryReq extends AbstractWitonRequest<SpBillQueryReq, SpBil
      * @return property value of method
      */
     public String getMethod() {
-        return "";
+        return "witon.wxsp.bill.query";
     }
 
     /** 

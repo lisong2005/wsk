@@ -25,7 +25,7 @@ public class WxSpTradeReverseReq extends
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.micropay.reverse";
     }
 
     /** 

@@ -24,7 +24,7 @@ public class WxSpTradeRefundReq extends AbstractWitonRequest<SpTradeRefundReq, S
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.refund";
     }
 
     /** 

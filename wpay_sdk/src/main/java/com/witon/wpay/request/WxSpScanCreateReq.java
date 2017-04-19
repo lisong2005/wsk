@@ -24,7 +24,7 @@ public class WxSpScanCreateReq extends AbstractWitonRequest<SpScanCreateReq, SpS
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.scan.create";
     }
 
     /** 

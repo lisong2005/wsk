@@ -25,7 +25,7 @@ public class WxSpTradeRefundQueryReq extends
      */
     @Override
     public String getMethod() {
-        return "";
+        return "witon.wxsp.trade.refund.query";
     }
 
     /** 
