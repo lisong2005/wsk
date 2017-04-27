@@ -27,7 +27,7 @@ public class SpTradeQueryResp extends AbstractResponse {
     private String            is_subscribe;
     private String            bank_type;
     private long              total_fee;
-    private String            wt_trado_no;
+    private String            wt_trade_no;
     private String            trade_no;
     private String            attach;
     private String            time_end;
@@ -124,21 +124,21 @@ public class SpTradeQueryResp extends AbstractResponse {
     }
 
     /**
-     * Getter method for property <tt>wt_trado_no</tt>.
+     * Getter method for property <tt>wt_trade_no</tt>.
      * 
-     * @return property value of wt_trado_no
+     * @return property value of wt_trade_no
      */
-    public String getWt_trado_no() {
-        return wt_trado_no;
+    public String getWt_trade_no() {
+        return wt_trade_no;
     }
 
     /**
-     * Setter method for property <tt>wt_trado_no</tt>.
+     * Setter method for property <tt>wt_trade_no</tt>.
      * 
-     * @param wt_trado_no value to be assigned to property wt_trado_no
+     * @param wt_trade_no value to be assigned to property wt_trade_no
      */
-    public void setWt_trado_no(String wt_trado_no) {
-        this.wt_trado_no = wt_trado_no;
+    public void setWt_trade_no(String wt_trade_no) {
+        this.wt_trade_no = wt_trade_no;
     }
 
     /**

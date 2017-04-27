@@ -56,8 +56,8 @@ public class DefaultWitonClientTest {
             SpJspayCreateReq c = new SpJspayCreateReq();
             c.setAttach("aa");
             c.setBody("body");
-            c.setOpenId("o7Tl7t8XZOlh5tEjup5QsCbHran0");
-            c.setWxAppId("wx2214e4824de9f67c");
+            c.setOpenId("okoE3v5kGPrjI_gevafzNMtM6F74");
+            c.setWxAppId("wx985bfeb7fc165525");
             c.setCreateIp("58.240.244.130");
             c.setNotifyUrl("http://test.witontek.com/rbEduPay/tparty/");
             c.setTotalFee(1L);

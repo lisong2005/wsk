@@ -4,19 +4,29 @@
  */
 package com.witon.wpay;
 
+import java.io.File;
+import java.io.InputStream;
+
+import javax.ws.rs.client.WebTarget;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.witon.wpay.domain.req.wx.SpBillQueryReq;
 import com.witon.wpay.domain.req.wx.SpTradeQueryReq;
 import com.witon.wpay.domain.req.wx.SpTradeRefundQueryReq;
 import com.witon.wpay.domain.req.wx.SpTradeRefundReq;
+import com.witon.wpay.domain.resp.wx.SpBillQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeRefundQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeRefundResp;
+import com.witon.wpay.request.WxSpBillQueryReq;
 import com.witon.wpay.request.WxSpTradeQueryReq;
 import com.witon.wpay.request.WxSpTradeRefundQueryReq;
 import com.witon.wpay.request.WxSpTradeRefundReq;
+import com.witon.wpay.util.EhJerseyClient;
 
 /**
  * 
@@ -42,8 +52,8 @@ public class ClientTest2 {
 
             WxSpTradeQueryReq request = new WxSpTradeQueryReq();
             SpTradeQueryReq c = new SpTradeQueryReq();
-            c.setWxAppId("wx2214e4824de9f67c");
-            c.setTradeNo("20170424010000000000000000003081");
+            c.setWxAppId("wx985bfeb7fc165525");
+            c.setTradeNo("6b75581eb9d142ec961dc84931fa7cac");
 
             request.setBizReq(c);
             WitonResponse<SpTradeQueryResp> resp = client.exe(request);
@@ -62,12 +72,14 @@ public class ClientTest2 {
 
             WxSpTradeRefundReq request = new WxSpTradeRefundReq();
             SpTradeRefundReq c = new SpTradeRefundReq();
-            c.setWxAppId("wx2214e4824de9f67c");
-            c.setTradeNo("20170424010000000000000000003081");
-            c.setRefundNo("20170424010000000000000000003081");
-            c.setRefundFee(1L);
+            c.setWxAppId("wx985bfeb7fc165525");
+            //            c.setTradeNo("6b75581eb9d142ec961dc84931fa7cac");
+            c.setWtTradeNo("20170426010000000000000000003241");
+            c.setRefundNo("20170426010000000000000000003241");
+            c.setRefundFee(2L);
             c.setOpUserId("opUserId");
             c.setDeviceInfo("deviceInfo");
+            c.setTotalFee(10L);
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundResp> resp = client.exe(request);
@@ -95,6 +107,35 @@ public class ClientTest2 {
 
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_bill_query() {
+        try {
+            WitonClient client = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY, GATEWAY_URL,
+                PID);
+
+            WxSpBillQueryReq request = new WxSpBillQueryReq();
+            SpBillQueryReq c = new SpBillQueryReq();
+            c.setBillDate("20170424");
+            c.setBillType("SUCCESS");
+
+            request.setBizReq(c);
+            WitonResponse<SpBillQueryResp> resp = client.exe(request);
+
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+
+            String url = resp.getBizResp().getUrl();
+            WebTarget target = EhJerseyClient.getJerseyClient().target(url);
+            InputStream is = target.request().get(InputStream.class);
+            File f = new File("d:/b.csv");
+
+            FileUtils.copyInputStreamToFile(is, f);
+
         } catch (Exception e) {
             logger.error("", e);
         }
