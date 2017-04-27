@@ -32,7 +32,7 @@ public class SpTradeRefundReq extends AbstractRequest {
     @XmlElement(name = "trade_no")
     private String            tradeNo;
 
-    @XmlElement(name = "wt_trado_no")
+    @XmlElement(name = "wt_trade_no")
     private String            wtTradeNo;
 
     @XmlElement(name = "total_fee")
