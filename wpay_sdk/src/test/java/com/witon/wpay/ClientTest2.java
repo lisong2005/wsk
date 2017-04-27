@@ -6,6 +6,7 @@ package com.witon.wpay;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.UUID;
 
 import javax.ws.rs.client.WebTarget;
 
@@ -53,7 +54,8 @@ public class ClientTest2 {
             WxSpTradeQueryReq request = new WxSpTradeQueryReq();
             SpTradeQueryReq c = new SpTradeQueryReq();
             c.setWxAppId("wx985bfeb7fc165525");
-            c.setTradeNo("6b75581eb9d142ec961dc84931fa7cac");
+            //            c.setTradeNo("6b75581eb9d142ec961dc84931fa7cac");
+            c.setWtTradeNo("20170426010000000000000000003201");
 
             request.setBizReq(c);
             WitonResponse<SpTradeQueryResp> resp = client.exe(request);
@@ -75,8 +77,8 @@ public class ClientTest2 {
             c.setWxAppId("wx985bfeb7fc165525");
             //            c.setTradeNo("6b75581eb9d142ec961dc84931fa7cac");
             c.setWtTradeNo("20170426010000000000000000003241");
-            c.setRefundNo("20170426010000000000000000003241");
-            c.setRefundFee(2L);
+            c.setRefundNo(UUID.randomUUID().toString());
+            c.setRefundFee(7L);
             c.setOpUserId("opUserId");
             c.setDeviceInfo("deviceInfo");
             c.setTotalFee(10L);
@@ -100,7 +102,8 @@ public class ClientTest2 {
             WxSpTradeRefundQueryReq request = new WxSpTradeRefundQueryReq();
             SpTradeRefundQueryReq c = new SpTradeRefundQueryReq();
             c.setWxAppId("wx2214e4824de9f67c");
-            c.setTradeNo("20170424010000000000000000003081");
+            c.setWtRefundNo("20170427020000000000000000000024");
+            //            c.setTradeNo("20170424010000000000000000003081");
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundQueryResp> resp = client.exe(request);
