@@ -5,12 +5,7 @@
 package com.witon.wpay.test;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.witon.wpay.DefaultWitonClient;
-import com.witon.wpay.TestConstants;
-import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpTradeQueryReq;
 import com.witon.wpay.domain.resp.wx.SpTradeQueryResp;
@@ -21,14 +16,7 @@ import com.witon.wpay.request.WxSpTradeQueryReq;
  * @author song.li@witontek.com
  * @version $Id: TradeQueryTest.java, v 0.1 2017年4月27日 上午10:29:13 song.li@witontek.com Exp $
  */
-public class TradeQueryTest implements TestConstants {
-    /**
-    * Logger for this class
-    */
-    private static final Logger logger = LoggerFactory.getLogger(TradeQueryTest.class);
-
-    private static WitonClient  client = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY,
-        GATEWAY_URL, PID);
+public class TradeQueryTest extends AbstractTest {
 
     @Test
     public void test_trade_query() {
