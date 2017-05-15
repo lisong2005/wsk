@@ -34,7 +34,7 @@ public class JspayTradeTest extends AbstractTest {
             c.setWxAppId("wx985bfeb7fc165525");
             c.setCreateIp("58.240.244.130");
             c.setNotifyUrl("http://test.witontek.com");
-            c.setTotalFee(1L);
+            c.setTotalFee(100L);
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
             c.setTimeStart(DateUtil.getLongDateString(new Date()));
             c.setTimeExpire(DateUtil.getLongDateString(
