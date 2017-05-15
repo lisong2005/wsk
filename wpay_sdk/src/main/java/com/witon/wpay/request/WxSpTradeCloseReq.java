@@ -12,7 +12,7 @@ import com.witon.wpay.domain.resp.wx.SpTradeCloseyResp;
  * @author song.li@witontek.com
  * @version $Id: WxSpTradeCloseyReq.java, v 0.1 2017年4月17日 下午3:21:34 song.li@witontek.com Exp $
  */
-public class WxSpTradeCloseyReq extends AbstractWitonRequest<SpTradeCloseyReq, SpTradeCloseyResp> {
+public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseyReq, SpTradeCloseyResp> {
 
     /**  */
     private static final long serialVersionUID = -7590636453729453968L;
