@@ -18,11 +18,13 @@ import com.witon.wpay.WitonClient;
  */
 public abstract class AbstractTest implements TestConstants {
 
+    public static String         NOTIFY_URL = "https://test.witontek.com/wpay/test/notify.do";
+
     /**
      * Logger for this class
      */
-    protected final Logger       logger = LoggerFactory.getLogger(getClass());
+    protected final Logger       logger     = LoggerFactory.getLogger(getClass());
 
-    protected static WitonClient client = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY,
+    protected static WitonClient client     = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY2,
         GATEWAY_URL, PID);
 }

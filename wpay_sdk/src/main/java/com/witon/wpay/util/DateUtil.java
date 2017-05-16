@@ -30,6 +30,7 @@ public class DateUtil {
 
     public final static String    simpleFormat         = "M/d";
     public final static String    shortFormat          = "yyyyMMdd";
+    public final static String    minFormat            = "yyyyMMddHHmm";
     public final static String    longFormat           = "yyyyMMddHHmmss";
     public final static String    webFormat            = "yyyy-MM-dd";
     public final static String    shortWebDateFormat   = "yyyy-MM";
@@ -326,6 +327,11 @@ public class DateUtil {
      */
     public static String getLongDateString(Date date) {
         DateFormat dateFormat = new SimpleDateFormat(longFormat);
+        return formatDateString(date, dateFormat);
+    }
+
+    public static String getMinDateString(Date date) {
+        DateFormat dateFormat = new SimpleDateFormat(minFormat);
         return formatDateString(date, dateFormat);
     }
 
