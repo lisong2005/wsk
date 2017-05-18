@@ -4,17 +4,14 @@
  */
 package com.witon.wpay.test;
 
-import java.util.Date;
 import java.util.UUID;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpScanCreateReq;
 import com.witon.wpay.domain.resp.wx.SpScanCreateResp;
 import com.witon.wpay.request.WxSpScanCreateReq;
-import com.witon.wpay.util.DateUtil;
 
 /**
  * 
@@ -35,9 +32,9 @@ public class ScanTradeTest extends AbstractTest {
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(11L);
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setTimeStart(DateUtil.getLongDateString(new Date()));
-            c.setTimeExpire(DateUtil.getLongDateString(
-                new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
+            //            c.setTimeStart(DateUtil.getLongDateString(new Date()));
+            //            c.setTimeExpire(DateUtil.getLongDateString(
+            //                new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
             c.setProductId("prod_id");
 
             request.setBizReq(c);
