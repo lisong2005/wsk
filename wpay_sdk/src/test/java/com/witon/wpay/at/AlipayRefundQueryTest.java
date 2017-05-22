@@ -21,12 +21,13 @@ public class AlipayRefundQueryTest extends AbstractTest {
 
     // 20170518010000000000000000002123
     @Test
-    public void test_trade_refund_queryl() {
+    public void test_trade_refund_query() {
         try {
             AlipayTradeRefundQueryReq request = new AlipayTradeRefundQueryReq();
             AliSpTradeRefundQueryReq c = new AliSpTradeRefundQueryReq();
-            c.setWtTradeNo("20170518010000000000000000002123");
+            c.setWtTradeNo("20170518010000000000000000002123x");
             c.setRefundNo("20170518010000000000000000002123");
+            c.setRefundNo(" ");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeRefundQueryResp> resp = client.exe(request);

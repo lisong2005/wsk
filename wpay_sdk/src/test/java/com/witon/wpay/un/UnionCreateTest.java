@@ -31,7 +31,7 @@ public class UnionCreateTest extends AbstractTest {
             UnTradeCreateReq c = new UnTradeCreateReq();
             c.setBody("iphone6s");
             c.setNotifyUrl(NOTIFY_URL);
-            c.setTotalFee(1111L);
+            c.setTotalFee(111111L);
             c.setTradeNo(UUID.randomUUID().toString());
 
             request.setBizReq(c);

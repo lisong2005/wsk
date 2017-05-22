@@ -20,7 +20,7 @@ import com.witon.wpay.test.AbstractTest;
 public class AlipayBillTest extends AbstractTest {
 
     @Test
-    public void test_trade_cancel() {
+    public void test_bill_query() {
         try {
             AlipayBillQueryReq request = new AlipayBillQueryReq();
             AliSpBillQueryReq c = new AliSpBillQueryReq();

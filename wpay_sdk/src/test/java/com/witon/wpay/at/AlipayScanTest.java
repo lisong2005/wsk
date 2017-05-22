@@ -36,7 +36,7 @@ public class AlipayScanTest extends AbstractTest {
             //            c.setBody("body");
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(1);
-            c.setTradeNo("f43c63c8174f4bc8a8ef593758d852c0");
+            c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
             c.setTimeExpire(DateUtil.getMinDateString(
                 new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
@@ -56,7 +56,7 @@ public class AlipayScanTest extends AbstractTest {
             // 7473c5abe11a43f2a73b7a0da15c2377
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("f43c63c8174f4bc8a8ef593758d852c0");
+            c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);
