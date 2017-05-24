@@ -24,6 +24,9 @@ public abstract class RtAbstractTest implements RtTestConstants {
      */
     protected final Logger       logger     = LoggerFactory.getLogger(getClass());
 
-    protected static WitonClient client     = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY,
+    protected static WitonClient client1     = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY,
         GATEWAY_URL, PID);
+
+    protected static WitonClient client2    = new DefaultWitonClient(WITON_PUB_KEY, YOUR_PRI_KEY2,
+        GATEWAY_URL, PID2);
 }

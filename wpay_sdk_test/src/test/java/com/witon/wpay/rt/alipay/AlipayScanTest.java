@@ -28,7 +28,7 @@ import com.witon.wpay.util.DateUtil;
 public class AlipayScanTest extends RtAbstractTest {
 
     @Test
-    public void test_trade_create() {
+    public void test_trade_create_001() {
         try {
             AlipayScanCreateReq request = new AlipayScanCreateReq();
             AliSpScanCreateReq c = new AliSpScanCreateReq();
@@ -42,7 +42,29 @@ public class AlipayScanTest extends RtAbstractTest {
                 new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
 
             request.setBizReq(c);
-            WitonResponse<AliSpScanCreateResp> resp = client.exe(request);
+            WitonResponse<AliSpScanCreateResp> resp = client1.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_create_002() {
+        try {
+            AlipayScanCreateReq request = new AlipayScanCreateReq();
+            AliSpScanCreateReq c = new AliSpScanCreateReq();
+            c.setSubject("ls");
+            c.setNotifyUrl(NOTIFY_URL);
+            c.setTotalFee(1);
+            c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
+            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
+            c.setTimeExpire(DateUtil.getMinDateString(
+                new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
+
+            request.setBizReq(c);
+            WitonResponse<AliSpScanCreateResp> resp = client2.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
@@ -59,7 +81,7 @@ public class AlipayScanTest extends RtAbstractTest {
             c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
 
             request.setBizReq(c);
-            WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);
+            WitonResponse<AliSpTradeQueryResp> resp = client1.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
