@@ -6,6 +6,12 @@ wpay_sdk/bin
 wpay_sdk/**/*.orig
 
 
+wpay_sdk_test/.classpath
+wpay_sdk_test/.project
+wpay_sdk_test/.settings
+wpay_sdk_test/target
+wpay_sdk_test/bin
+wpay_sdk_test/**/*.orig
 
 
 
