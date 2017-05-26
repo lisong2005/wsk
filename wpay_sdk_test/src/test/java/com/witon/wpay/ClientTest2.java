@@ -101,9 +101,7 @@ public class ClientTest2 {
 
             WxSpTradeRefundQueryReq request = new WxSpTradeRefundQueryReq();
             SpTradeRefundQueryReq c = new SpTradeRefundQueryReq();
-            c.setWxAppId("wx2214e4824de9f67c");
-            c.setWtRefundNo("20170427020000000000000000000024");
-            //            c.setTradeNo("20170424010000000000000000003081");
+            c.setRefundNo("");
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundQueryResp> resp = client.exe(request);

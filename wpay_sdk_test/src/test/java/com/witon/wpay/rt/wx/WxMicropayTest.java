@@ -10,8 +10,11 @@ import org.junit.Test;
 
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpMicropayCreateReq;
+import com.witon.wpay.domain.req.wx.SpTradeReverseReq;
 import com.witon.wpay.domain.resp.wx.SpMicropayCreateResp;
+import com.witon.wpay.domain.resp.wx.SpTradeReverseResp;
 import com.witon.wpay.request.WxSpMicropayCreateReq;
+import com.witon.wpay.request.WxSpTradeReverseReq;
 import com.witon.wpay.rt.RtAbstractTest;
 
 /**
@@ -31,7 +34,8 @@ public class WxMicropayTest extends RtAbstractTest {
             c.setCreateIp("58.240.244.130");
             c.setTotalFee(1L);
             c.setTradeNo(UUID.randomUUID().toString());
-            c.setAuthCode("130065166980926247");
+            c.setTradeNo("b3a832cf-5290-4aab-9e00-dcc64cd0f613");
+            c.setAuthCode("130236155480065064");
 
             request.setBizReq(c);
             WitonResponse<SpMicropayCreateResp> resp = client2.exe(request);
@@ -41,4 +45,23 @@ public class WxMicropayTest extends RtAbstractTest {
             logger.error("", e);
         }
     }
+
+    @Test
+    public void test_micropay_reverse_002() {
+        try {
+            WxSpTradeReverseReq request = new WxSpTradeReverseReq();
+            SpTradeReverseReq c = new SpTradeReverseReq();
+
+            c.setTradeNo(UUID.randomUUID().toString());
+            c.setTradeNo("b3a832cf-5290-4aab-9e00-dcc64cd0f613");
+
+            request.setBizReq(c);
+            WitonResponse<SpTradeReverseResp> resp = client2.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
 }

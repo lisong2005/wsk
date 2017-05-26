@@ -43,7 +43,7 @@ public class WxTradeQueryTest extends RtAbstractTest {
             WxSpTradeQueryReq request = new WxSpTradeQueryReq();
             SpTradeQueryReq c = new SpTradeQueryReq();
             // c.setWxAppId("wx985bfeb7fc165525");
-            c.setTradeNo("364c1568321a427292f4b9970f2a4c33");
+            c.setTradeNo("b3a832cf-5290-4aab-9e00-dcc64cd0f613");
             c.setWtTradeNo("");
 
             request.setBizReq(c);

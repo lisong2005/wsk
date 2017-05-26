@@ -45,7 +45,7 @@ public class WxRefundQueryTest extends RtAbstractTest {
         try {
             WxSpTradeRefundQueryReq request = new WxSpTradeRefundQueryReq();
             SpTradeRefundQueryReq c = new SpTradeRefundQueryReq();
-            c.setRefundNo("20170525020000000000000000000104");
+            c.setRefundNo("20170526010000000000000000000491");
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundQueryResp> resp = client2.exe(request);
