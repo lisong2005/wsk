@@ -13,10 +13,10 @@ import com.witon.wpay.domain.resp.wx.SpTradeRefundQueryResp;
  * @version $Id: WxSpTradeRefundQueryReq.java, v 0.1 2017年4月17日 下午3:23:53 song.li@witontek.com Exp $
  */
 public class WxSpTradeRefundQueryReq extends
-                                     AbstractWitonRequest<SpTradeRefundQueryReq, SpTradeRefundQueryResp> {
+                                      AbstractWitonRequest<SpTradeRefundQueryReq, SpTradeRefundQueryResp> {
 
     /**  */
-    private static final long     serialVersionUID = 6248516447254420196L;
+    private static final long      serialVersionUID = 6248516447254420196L;
 
     private SpTradeRefundQueryReq req;
 
@@ -25,7 +25,7 @@ public class WxSpTradeRefundQueryReq extends
      */
     @Override
     public String getMethod() {
-        return "witon.wxsp.trade.refund.query";
+        return "witon.wxsp.trade.refund.query2";
     }
 
     /** 

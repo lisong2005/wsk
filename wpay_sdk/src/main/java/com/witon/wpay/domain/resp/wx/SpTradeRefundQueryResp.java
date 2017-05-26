@@ -4,33 +4,33 @@
  */
 package com.witon.wpay.domain.resp.wx;
 
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.witon.wpay.domain.resp.AbstractResponse;
-import com.witon.wpay.util.BaseModel;
 
 /**
  * 
  * @author song.li@witontek.com
  * @version $Id: SpTradeRefundQueryResp.java, v 0.1 2017年4月7日 下午2:17:48 song.li@witontek.com Exp $
  */
-@XmlRootElement
+@XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SpTradeRefundQueryResp extends AbstractResponse {
 
     /**  */
-    private static final long     serialVersionUID = -7651751484979976464L;
+    private static final long serialVersionUID = -7651751484979976464L;
 
-    private String                trade_no;
-    private String                wt_trade_no;
-    private long                  total_fee;
-    private int                   refund_count;
+    private String            trade_no;
+    private String            wt_trade_no;
+    private long              total_fee;
 
-    private List<RefundOrderItem> refund_list;
+    private String            refund_no;
+    private String            wt_refund_no;
+    private long              refund_fee;
+    // 格式为：20141030133525
+    private String            refund_success_time;
 
     /**
      * Getter method for property <tt>trade_no</tt>.
@@ -87,123 +87,75 @@ public class SpTradeRefundQueryResp extends AbstractResponse {
     }
 
     /**
-     * Getter method for property <tt>refund_count</tt>.
+     * Getter method for property <tt>refund_no</tt>.
      * 
-     * @return property value of refund_count
+     * @return property value of refund_no
      */
-    public int getRefund_count() {
-        return refund_count;
+    public String getRefund_no() {
+        return refund_no;
     }
 
     /**
-     * Setter method for property <tt>refund_count</tt>.
+     * Setter method for property <tt>refund_no</tt>.
      * 
-     * @param refund_count value to be assigned to property refund_count
+     * @param refund_no value to be assigned to property refund_no
      */
-    public void setRefund_count(int refund_count) {
-        this.refund_count = refund_count;
+    public void setRefund_no(String refund_no) {
+        this.refund_no = refund_no;
     }
 
     /**
-     * Getter method for property <tt>refund_list</tt>.
+     * Getter method for property <tt>wt_refund_no</tt>.
      * 
-     * @return property value of refund_list
+     * @return property value of wt_refund_no
      */
-    public List<RefundOrderItem> getRefund_list() {
-        return refund_list;
+    public String getWt_refund_no() {
+        return wt_refund_no;
     }
 
     /**
-     * Setter method for property <tt>refund_list</tt>.
+     * Setter method for property <tt>wt_refund_no</tt>.
      * 
-     * @param refund_list value to be assigned to property refund_list
+     * @param wt_refund_no value to be assigned to property wt_refund_no
      */
-    public void setRefund_list(List<RefundOrderItem> refund_list) {
-        this.refund_list = refund_list;
+    public void setWt_refund_no(String wt_refund_no) {
+        this.wt_refund_no = wt_refund_no;
     }
 
-    public static class RefundOrderItem extends BaseModel {
-
-        /**  */
-        private static final long serialVersionUID = 5525559087495631077L;
-
-        private String            refund_no;
-        private String            wt_refund_no;
-        private long              refund_fee;
-        // 格式为：20141030133525
-        private String            refund_success_time;
-
-        /**
-         * Getter method for property <tt>refund_no</tt>.
-         * 
-         * @return property value of refund_no
-         */
-        public String getRefund_no() {
-            return refund_no;
-        }
-
-        /**
-         * Setter method for property <tt>refund_no</tt>.
-         * 
-         * @param refund_no value to be assigned to property refund_no
-         */
-        public void setRefund_no(String refund_no) {
-            this.refund_no = refund_no;
-        }
-
-        /**
-         * Getter method for property <tt>wt_refund_no</tt>.
-         * 
-         * @return property value of wt_refund_no
-         */
-        public String getWt_refund_no() {
-            return wt_refund_no;
-        }
-
-        /**
-         * Setter method for property <tt>wt_refund_no</tt>.
-         * 
-         * @param wt_refund_no value to be assigned to property wt_refund_no
-         */
-        public void setWt_refund_no(String wt_refund_no) {
-            this.wt_refund_no = wt_refund_no;
-        }
-
-        /**
-         * Getter method for property <tt>refund_fee</tt>.
-         * 
-         * @return property value of refund_fee
-         */
-        public long getRefund_fee() {
-            return refund_fee;
-        }
-
-        /**
-         * Setter method for property <tt>refund_fee</tt>.
-         * 
-         * @param refund_fee value to be assigned to property refund_fee
-         */
-        public void setRefund_fee(long refund_fee) {
-            this.refund_fee = refund_fee;
-        }
-
-        /**
-         * Getter method for property <tt>refund_success_time</tt>.
-         * 
-         * @return property value of refund_success_time
-         */
-        public String getRefund_success_time() {
-            return refund_success_time;
-        }
-
-        /**
-         * Setter method for property <tt>refund_success_time</tt>.
-         * 
-         * @param refund_success_time value to be assigned to property refund_success_time
-         */
-        public void setRefund_success_time(String refund_success_time) {
-            this.refund_success_time = refund_success_time;
-        }
-
+    /**
+     * Getter method for property <tt>refund_fee</tt>.
+     * 
+     * @return property value of refund_fee
+     */
+    public long getRefund_fee() {
+        return refund_fee;
     }
+
+    /**
+     * Setter method for property <tt>refund_fee</tt>.
+     * 
+     * @param refund_fee value to be assigned to property refund_fee
+     */
+    public void setRefund_fee(long refund_fee) {
+        this.refund_fee = refund_fee;
+    }
+
+    /**
+     * Getter method for property <tt>refund_success_time</tt>.
+     * 
+     * @return property value of refund_success_time
+     */
+    public String getRefund_success_time() {
+        return refund_success_time;
+    }
+
+    /**
+     * Setter method for property <tt>refund_success_time</tt>.
+     * 
+     * @param refund_success_time value to be assigned to property refund_success_time
+     */
+    public void setRefund_success_time(String refund_success_time) {
+        this.refund_success_time = refund_success_time;
+    }
+
 }
