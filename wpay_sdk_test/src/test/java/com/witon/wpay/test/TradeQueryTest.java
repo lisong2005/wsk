@@ -24,7 +24,7 @@ public class TradeQueryTest extends AbstractTest {
             WxSpTradeQueryReq request = new WxSpTradeQueryReq();
             SpTradeQueryReq c = new SpTradeQueryReq();
             c.setWxAppId("wx985bfeb7fc165525");
-            c.setTradeNo("364c1568321a427292f4b9970f2a4c33");
+            c.setTradeNo("e86e649acb16495fb73c6fedfb0dd491");
             c.setWtTradeNo("");
 
             request.setBizReq(c);
