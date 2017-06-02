@@ -25,7 +25,7 @@ import com.witon.wpay.rt.RtAbstractTest;
 public class WxMicropayTest extends RtAbstractTest {
 
     @Test
-    public void test_jspay_trade_create_001() {
+    public void test_micropay_trade_create_001() {
         try {
             WxSpMicropayCreateReq request = new WxSpMicropayCreateReq();
             SpMicropayCreateReq c = new SpMicropayCreateReq();

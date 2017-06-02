@@ -24,7 +24,7 @@ public class AlipayCancelTest extends AbstractTest {
         try {
             AlipayTradeCancelReq request = new AlipayTradeCancelReq();
             AliSpTradeCancelReq c = new AliSpTradeCancelReq();
-            c.setTradeNo("f43c63c8174f4bc8a8ef593758d852c0");
+            c.setTradeNo("643efa3e04c144e5820dd4f9722308e6");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeCancelResp> resp = client.exe(request);

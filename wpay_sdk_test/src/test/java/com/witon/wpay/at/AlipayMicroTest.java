@@ -4,6 +4,8 @@
  */
 package com.witon.wpay.at;
 
+import java.util.UUID;
+
 import org.junit.Test;
 
 import com.witon.wpay.WitonResponse;
@@ -27,13 +29,13 @@ public class AlipayMicroTest extends AbstractTest {
         try {
             AlipayMicropayCreateReq request = new AlipayMicropayCreateReq();
             AliSpMicropayCreateReq c = new AliSpMicropayCreateReq();
-            c.setSubject("subject");
+            c.setSubject("条码支付");
             c.setScene("bar_code");
             c.setBody("body");
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(1L);
-            c.setTradeNo("ls_test_005");
-            c.setAuthCode("286906258610228630");
+            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
+            c.setAuthCode("288092010706437216");
 
             request.setBizReq(c);
             WitonResponse<AliSpMicropayCreateResp> resp = client.exe(request);
@@ -50,7 +52,7 @@ public class AlipayMicroTest extends AbstractTest {
             // 7473c5abe11a43f2a73b7a0da15c2377
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("ls_test_004");
+            c.setTradeNo("1ff49927-b792-4b2e-9c90-b6acbd27300b");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);

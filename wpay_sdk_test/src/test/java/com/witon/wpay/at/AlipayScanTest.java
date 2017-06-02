@@ -32,7 +32,7 @@ public class AlipayScanTest extends AbstractTest {
         try {
             AlipayScanCreateReq request = new AlipayScanCreateReq();
             AliSpScanCreateReq c = new AliSpScanCreateReq();
-            c.setSubject("ls");
+            c.setSubject("扫码支付");
             //            c.setBody("body");
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(1);
@@ -56,7 +56,7 @@ public class AlipayScanTest extends AbstractTest {
             // 7473c5abe11a43f2a73b7a0da15c2377
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
+            c.setTradeNo("32e57c3968854f92b7e67d4f5b6a377e");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);
