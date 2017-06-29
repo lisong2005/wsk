@@ -7,7 +7,7 @@
 
 	<groupId>com.witon</groupId>
 	<artifactId>wpay-sdk</artifactId>
-	<version>1.0.0.2017-4-6</version>
+	<version>1.0.0.2017-7-1</version>
 	<packaging>jar</packaging>
 
 	<name>wpay-sdk</name>

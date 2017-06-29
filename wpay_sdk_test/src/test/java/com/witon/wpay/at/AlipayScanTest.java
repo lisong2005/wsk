@@ -4,10 +4,8 @@
  */
 package com.witon.wpay.at;
 
-import java.util.Date;
 import java.util.UUID;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import com.witon.wpay.WitonResponse;
@@ -18,7 +16,6 @@ import com.witon.wpay.domain.resp.alipay.AliSpTradeQueryResp;
 import com.witon.wpay.request.AlipayScanCreateReq;
 import com.witon.wpay.request.AlipayTradeQueryReq;
 import com.witon.wpay.test.AbstractTest;
-import com.witon.wpay.util.DateUtil;
 
 /**
  * 
@@ -33,13 +30,10 @@ public class AlipayScanTest extends AbstractTest {
             AlipayScanCreateReq request = new AlipayScanCreateReq();
             AliSpScanCreateReq c = new AliSpScanCreateReq();
             c.setSubject("扫码支付");
-            //            c.setBody("body");
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(1);
             c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setTimeExpire(DateUtil.getMinDateString(
-                new Date(System.currentTimeMillis() + DateUtils.MILLIS_PER_HOUR)));
 
             request.setBizReq(c);
             WitonResponse<AliSpScanCreateResp> resp = client.exe(request);
@@ -56,7 +50,7 @@ public class AlipayScanTest extends AbstractTest {
             // 7473c5abe11a43f2a73b7a0da15c2377
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("32e57c3968854f92b7e67d4f5b6a377e");
+            c.setTradeNo("7bf0af4380d943739fd9c668cd1f28ac");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);

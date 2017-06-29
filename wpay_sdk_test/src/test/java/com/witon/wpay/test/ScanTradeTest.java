@@ -26,7 +26,7 @@ public class ScanTradeTest extends AbstractTest {
             WxSpScanCreateReq request = new WxSpScanCreateReq();
             SpScanCreateReq c = new SpScanCreateReq();
             c.setAttach("aa");
-            c.setBody("body");
+            c.setBody("<a href='www.baidu.com'>xx</a>");
             c.setWxAppId("wx985bfeb7fc165525");
             c.setCreateIp("58.240.244.130");
             c.setNotifyUrl(NOTIFY_URL);

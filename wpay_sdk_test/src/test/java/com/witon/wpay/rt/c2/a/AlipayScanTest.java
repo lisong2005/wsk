@@ -59,7 +59,7 @@ public class AlipayScanTest extends RtAbstractTest {
             // 7473c5abe11a43f2a73b7a0da15c2377
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("a7312784340d41a3878ecdb051ac22c9");
+            c.setTradeNo("57839b30-bb81-463b-a074-201c0725332e");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);
