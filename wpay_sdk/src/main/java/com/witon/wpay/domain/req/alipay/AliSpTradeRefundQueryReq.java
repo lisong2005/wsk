@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.witon.wpay.domain.req.AbstractRequest;
+import com.witon.wpay.domain.req.AbstractSpReq;
 
 /**
  * 
@@ -18,55 +18,13 @@ import com.witon.wpay.domain.req.AbstractRequest;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AliSpTradeRefundQueryReq extends AbstractRequest {
+public class AliSpTradeRefundQueryReq extends AbstractSpReq {
 
     /**  */
     private static final long serialVersionUID = -3419935651554701739L;
 
-    @XmlElement(name = "trade_no")
-    private String            tradeNo;
-
-    @XmlElement(name = "wt_trade_no")
-    private String            wtTradeNo;
-
     @XmlElement(name = "refund_no")
     private String            refundNo;
-
-    /**
-     * Getter method for property <tt>tradeNo</tt>.
-     * 
-     * @return property value of tradeNo
-     */
-    public String getTradeNo() {
-        return tradeNo;
-    }
-
-    /**
-     * Setter method for property <tt>tradeNo</tt>.
-     * 
-     * @param tradeNo value to be assigned to property tradeNo
-     */
-    public void setTradeNo(String tradeNo) {
-        this.tradeNo = tradeNo;
-    }
-
-    /**
-     * Getter method for property <tt>wtTradeNo</tt>.
-     * 
-     * @return property value of wtTradeNo
-     */
-    public String getWtTradeNo() {
-        return wtTradeNo;
-    }
-
-    /**
-     * Setter method for property <tt>wtTradeNo</tt>.
-     * 
-     * @param wtTradeNo value to be assigned to property wtTradeNo
-     */
-    public void setWtTradeNo(String wtTradeNo) {
-        this.wtTradeNo = wtTradeNo;
-    }
 
     /**
      * Getter method for property <tt>refundNo</tt>.

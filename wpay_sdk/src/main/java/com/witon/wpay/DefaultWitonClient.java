@@ -17,8 +17,8 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.witon.wpay.domain.req.AbstractRequest;
-import com.witon.wpay.domain.resp.AbstractResponse;
+import com.witon.wpay.domain.req.AbstractSpReq;
+import com.witon.wpay.domain.resp.AbstractSpResp;
 import com.witon.wpay.util.EhJerseyClient;
 import com.witon.wpay.util.JsonUtils;
 import com.witon.wpay.util.SignUtils;
@@ -87,7 +87,7 @@ public class DefaultWitonClient implements WitonClient {
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
-    public <Q extends AbstractRequest, P extends AbstractResponse> WitonResponse<P> exe(WitonRequest<Q, P> request) {
+    public <Q extends AbstractSpReq, P extends AbstractSpResp> WitonResponse<P> exe(WitonRequest<Q, P> request) {
         logger.info("{}", request);
         WitonResponse resp = null;
 

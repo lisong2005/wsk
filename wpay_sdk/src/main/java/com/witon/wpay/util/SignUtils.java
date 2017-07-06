@@ -33,7 +33,7 @@ public class SignUtils {
     */
     private static final Logger logger          = LoggerFactory.getLogger(SignUtils.class);
 
-    public static final String  SIGN_ALGORITHMS = "SHA1WithRSA";
+    public static final String  SIGN_ALGORITHMS = "SHA256WithRSA";
     /**  */
     private static final String RSA             = "RSA";
 

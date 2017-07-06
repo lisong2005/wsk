@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.witon.wpay.domain.req.AbstractRequest;
+import com.witon.wpay.domain.req.AbstractSpReq;
 
 /**
  * 
@@ -18,7 +18,7 @@ import com.witon.wpay.domain.req.AbstractRequest;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SpTradeRefundReq extends AbstractRequest {
+public class SpTradeRefundReq extends AbstractSpReq {
 
     /**  */
     private static final long serialVersionUID = -3895319551568233808L;

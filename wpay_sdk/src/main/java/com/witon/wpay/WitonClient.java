@@ -4,8 +4,8 @@
  */
 package com.witon.wpay;
 
-import com.witon.wpay.domain.req.AbstractRequest;
-import com.witon.wpay.domain.resp.AbstractResponse;
+import com.witon.wpay.domain.req.AbstractSpReq;
+import com.witon.wpay.domain.resp.AbstractSpResp;
 
 /**
  * 
@@ -14,6 +14,6 @@ import com.witon.wpay.domain.resp.AbstractResponse;
  */
 public interface WitonClient {
 
-    public <Q extends AbstractRequest, P extends AbstractResponse> WitonResponse<P> exe(WitonRequest<Q, P> request);
+    public <Q extends AbstractSpReq, P extends AbstractSpResp> WitonResponse<P> exe(WitonRequest<Q, P> request);
 
 }

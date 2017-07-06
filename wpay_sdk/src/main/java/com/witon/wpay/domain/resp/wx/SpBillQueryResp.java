@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.witon.wpay.domain.resp.AbstractResponse;
+import com.witon.wpay.domain.resp.AbstractSpResp;
 
 /**
  * 
@@ -17,7 +17,7 @@ import com.witon.wpay.domain.resp.AbstractResponse;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SpBillQueryResp extends AbstractResponse {
+public class SpBillQueryResp extends AbstractSpResp {
 
     /**  */
     private static final long serialVersionUID = -520645540484591815L;
