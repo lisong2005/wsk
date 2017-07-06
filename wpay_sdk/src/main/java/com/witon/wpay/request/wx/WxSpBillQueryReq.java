@@ -2,10 +2,11 @@
  * Witontek.com.
  * Copyright (c) 2012-2017 All Rights Reserved.
  */
-package com.witon.wpay.request;
+package com.witon.wpay.request.wx;
 
 import com.witon.wpay.domain.req.wx.SpBillQueryReq;
 import com.witon.wpay.domain.resp.wx.SpBillQueryResp;
+import com.witon.wpay.request.AbstractWitonRequest;
 
 /**
  * 

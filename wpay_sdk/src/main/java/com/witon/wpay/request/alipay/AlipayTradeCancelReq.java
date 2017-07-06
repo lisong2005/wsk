@@ -2,10 +2,11 @@
  * Witontek.com.
  * Copyright (c) 2012-2017 All Rights Reserved.
  */
-package com.witon.wpay.request;
+package com.witon.wpay.request.alipay;
 
 import com.witon.wpay.domain.req.alipay.AliSpTradeCancelReq;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeCancelResp;
+import com.witon.wpay.request.AbstractWitonRequest;
 
 /**
  * 
