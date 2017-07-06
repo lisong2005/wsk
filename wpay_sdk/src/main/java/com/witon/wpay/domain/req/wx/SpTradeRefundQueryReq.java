@@ -23,8 +23,29 @@ public class SpTradeRefundQueryReq extends AbstractSpReq {
     /**  */
     private static final long serialVersionUID = -5074666727448530123L;
 
+    @XmlElement(name = "wx_appid")
+    private String            wxAppId;
+
     @XmlElement(name = "refund_no")
     private String            refundNo;
+
+    /**
+     * Getter method for property <tt>wxAppId</tt>.
+     * 
+     * @return property value of wxAppId
+     */
+    public String getWxAppId() {
+        return wxAppId;
+    }
+
+    /**
+     * Setter method for property <tt>wxAppId</tt>.
+     * 
+     * @param wxAppId value to be assigned to property wxAppId
+     */
+    public void setWxAppId(String wxAppId) {
+        this.wxAppId = wxAppId;
+    }
 
     /**
      * Getter method for property <tt>refundNo</tt>.

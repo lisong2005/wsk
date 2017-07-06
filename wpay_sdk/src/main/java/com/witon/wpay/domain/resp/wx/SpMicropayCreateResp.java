@@ -15,7 +15,7 @@ import com.witon.wpay.domain.resp.AbstractSpResp;
  * @author song.li@witontek.com
  * @version $Id: SpMicropayCreateResp.java, v 0.1 2017年4月7日 下午2:12:07 song.li@witontek.com Exp $
  */
-@XmlRootElement
+@XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SpMicropayCreateResp extends AbstractSpResp {
 

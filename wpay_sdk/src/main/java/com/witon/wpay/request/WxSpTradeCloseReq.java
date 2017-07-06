@@ -4,20 +4,20 @@
  */
 package com.witon.wpay.request;
 
-import com.witon.wpay.domain.req.wx.SpTradeCloseyReq;
-import com.witon.wpay.domain.resp.wx.SpTradeCloseyResp;
+import com.witon.wpay.domain.req.wx.SpTradeCloseReq;
+import com.witon.wpay.domain.resp.wx.SpTradeCloseResp;
 
 /**
  * 
  * @author song.li@witontek.com
  * @version $Id: WxSpTradeCloseyReq.java, v 0.1 2017年4月17日 下午3:21:34 song.li@witontek.com Exp $
  */
-public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseyReq, SpTradeCloseyResp> {
+public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseReq, SpTradeCloseResp> {
 
     /**  */
     private static final long serialVersionUID = -7590636453729453968L;
 
-    private SpTradeCloseyReq  req;
+    private SpTradeCloseReq   req;
 
     /** 
      * @see com.witon.wpay.WitonRequest#getMethod()
@@ -31,7 +31,7 @@ public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseyReq, Sp
      * @see com.witon.wpay.WitonRequest#getBizReq()
      */
     @Override
-    public SpTradeCloseyReq getBizReq() {
+    public SpTradeCloseReq getBizReq() {
         return req;
     }
 
@@ -39,7 +39,7 @@ public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseyReq, Sp
      * @see com.witon.wpay.WitonRequest#setBizReq(com.witon.wpay.domain.req.AbstractRequest)
      */
     @Override
-    public void setBizReq(SpTradeCloseyReq biz_content) {
+    public void setBizReq(SpTradeCloseReq biz_content) {
         this.req = biz_content;
     }
 
@@ -47,8 +47,8 @@ public class WxSpTradeCloseReq extends AbstractWitonRequest<SpTradeCloseyReq, Sp
      * @see com.witon.wpay.WitonRequest#getRespClazz()
      */
     @Override
-    public Class<SpTradeCloseyResp> getRespClazz() {
-        return SpTradeCloseyResp.class;
+    public Class<SpTradeCloseResp> getRespClazz() {
+        return SpTradeCloseResp.class;
     }
 
 }

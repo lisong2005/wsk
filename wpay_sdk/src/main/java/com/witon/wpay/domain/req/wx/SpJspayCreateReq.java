@@ -29,9 +29,6 @@ public class SpJspayCreateReq extends AbstractSpReq {
     @XmlElement(name = "open_id")
     private String            openId;
 
-    @XmlElement(name = "prod_tag")
-    private String            prodTag;
-
     @XmlElement(name = "device_info")
     private String            deviceInfo;
 
@@ -61,6 +58,9 @@ public class SpJspayCreateReq extends AbstractSpReq {
 
     @XmlElement(name = "limit_pay")
     private String            limitPay;
+
+    @XmlElement(name = "prod_tag")
+    private String            prodTag;
 
     /**
      * Getter method for property <tt>wxAppId</tt>.

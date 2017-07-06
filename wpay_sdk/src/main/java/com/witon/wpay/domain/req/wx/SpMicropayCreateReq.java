@@ -26,9 +26,6 @@ public class SpMicropayCreateReq extends AbstractSpReq {
     @XmlElement(name = "wx_appid")
     private String            wxAppId;
 
-    @XmlElement(name = "prod_tag")
-    private String            prodTag;
-
     @XmlElement(name = "device_info")
     private String            deviceInfo;
 
@@ -53,6 +50,9 @@ public class SpMicropayCreateReq extends AbstractSpReq {
 
     @XmlElement(name = "limit_pay")
     private String            limitPay;
+
+    @XmlElement(name = "prod_tag")
+    private String            prodTag;
 
     /**
      * Getter method for property <tt>wxAppId</tt>.

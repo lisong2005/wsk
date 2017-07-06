@@ -18,7 +18,7 @@ import com.witon.wpay.domain.req.AbstractSpReq;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SpTradeCloseyReq extends AbstractSpReq {
+public class SpTradeCloseReq extends AbstractSpReq {
 
     /**  */
     private static final long serialVersionUID = -2558117999022924131L;

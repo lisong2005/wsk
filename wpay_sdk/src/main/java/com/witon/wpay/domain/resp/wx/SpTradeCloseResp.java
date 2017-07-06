@@ -15,9 +15,9 @@ import com.witon.wpay.domain.resp.AbstractSpResp;
  * @author song.li@witontek.com
  * @version $Id: SpTradeCloseyResp.java, v 0.1 2017年4月7日 下午2:15:45 song.li@witontek.com Exp $
  */
-@XmlRootElement
+@XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SpTradeCloseyResp extends AbstractSpResp {
+public class SpTradeCloseResp extends AbstractSpResp {
 
     /**  */
     private static final long serialVersionUID = -741983562609685571L;
