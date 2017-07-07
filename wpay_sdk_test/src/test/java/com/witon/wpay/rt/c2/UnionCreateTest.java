@@ -12,7 +12,7 @@ import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.un.UnTradeCreateReq;
 import com.witon.wpay.domain.resp.un.UnTradeCreateResp;
-import com.witon.wpay.request.UnionTradeCreateReq;
+import com.witon.wpay.request.un.UnionTradeCreateReq;
 import com.witon.wpay.rt.RtAbstractTest;
 
 /**

@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpTradeReverseReq;
 import com.witon.wpay.domain.resp.wx.SpTradeReverseResp;
-import com.witon.wpay.request.WxSpTradeReverseReq;
+import com.witon.wpay.request.wx.WxSpTradeReverseReq;
 
 /**
  * 

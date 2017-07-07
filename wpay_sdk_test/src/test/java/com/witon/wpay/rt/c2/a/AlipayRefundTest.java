@@ -10,7 +10,7 @@ import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.alipay.AliSpTradeRefundReq;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeRefundResp;
-import com.witon.wpay.request.AlipayTradeRefundReq;
+import com.witon.wpay.request.alipay.AlipayTradeRefundReq;
 import com.witon.wpay.rt.RtAbstractTest;
 
 /**

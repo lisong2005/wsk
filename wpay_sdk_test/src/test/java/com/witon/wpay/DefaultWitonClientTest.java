@@ -20,10 +20,10 @@ import com.witon.wpay.domain.resp.wx.SpJspayCreateResp;
 import com.witon.wpay.domain.resp.wx.SpScanCreateResp;
 import com.witon.wpay.domain.resp.wx.SpTradeQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeRefundResp;
-import com.witon.wpay.request.WxSpJspayCreateReq;
-import com.witon.wpay.request.WxSpScanCreateReq;
-import com.witon.wpay.request.WxSpTradeQueryReq;
-import com.witon.wpay.request.WxSpTradeRefundReq;
+import com.witon.wpay.request.wx.WxSpJspayCreateReq;
+import com.witon.wpay.request.wx.WxSpScanCreateReq;
+import com.witon.wpay.request.wx.WxSpTradeQueryReq;
+import com.witon.wpay.request.wx.WxSpTradeRefundReq;
 import com.witon.wpay.util.DateUtil;
 
 /**

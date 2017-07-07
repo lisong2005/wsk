@@ -13,8 +13,8 @@ import com.witon.wpay.domain.req.alipay.AliSpTradeQueryReq;
 import com.witon.wpay.domain.req.un.UnTradeCreateReq;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeQueryResp;
 import com.witon.wpay.domain.resp.un.UnTradeCreateResp;
-import com.witon.wpay.request.AlipayTradeQueryReq;
-import com.witon.wpay.request.UnionTradeCreateReq;
+import com.witon.wpay.request.alipay.AlipayTradeQueryReq;
+import com.witon.wpay.request.un.UnionTradeCreateReq;
 import com.witon.wpay.test.AbstractTest;
 
 /**

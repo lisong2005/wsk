@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.alipay.AliSpTradeRefundQueryReq;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeRefundQueryResp;
-import com.witon.wpay.request.AlipayTradeRefundQueryReq;
+import com.witon.wpay.request.alipay.AlipayTradeRefundQueryReq;
 import com.witon.wpay.test.AbstractTest;
 
 /**
@@ -25,7 +25,7 @@ public class AlipayRefundQueryTest extends AbstractTest {
         try {
             AlipayTradeRefundQueryReq request = new AlipayTradeRefundQueryReq();
             AliSpTradeRefundQueryReq c = new AliSpTradeRefundQueryReq();
-            c.setWtTradeNo("20170518010000000000000000002123x");
+            //            c.setWtTradeNo("20170518010000000000000000002123x");
             c.setRefundNo("20170518010000000000000000002123");
             c.setRefundNo(" ");
 

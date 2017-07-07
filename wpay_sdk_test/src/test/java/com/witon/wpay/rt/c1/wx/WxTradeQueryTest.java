@@ -10,7 +10,7 @@ import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpTradeQueryReq;
 import com.witon.wpay.domain.resp.wx.SpTradeQueryResp;
-import com.witon.wpay.request.WxSpTradeQueryReq;
+import com.witon.wpay.request.wx.WxSpTradeQueryReq;
 import com.witon.wpay.rt.RtAbstractTest;
 
 /**

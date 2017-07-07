@@ -17,7 +17,7 @@ import com.witon.wpay.domain.req.wx.SpBillQueryReq;
 import com.witon.wpay.domain.req.wx.SpJspayCreateReq;
 import com.witon.wpay.domain.req.wx.SpMicropayCreateReq;
 import com.witon.wpay.domain.req.wx.SpScanCreateReq;
-import com.witon.wpay.domain.req.wx.SpTradeCloseyReq;
+import com.witon.wpay.domain.req.wx.SpTradeCloseReq;
 import com.witon.wpay.domain.req.wx.SpTradeQueryReq;
 import com.witon.wpay.domain.req.wx.SpTradeRefundQueryReq;
 import com.witon.wpay.domain.req.wx.SpTradeRefundReq;
@@ -26,20 +26,20 @@ import com.witon.wpay.domain.resp.wx.SpBillQueryResp;
 import com.witon.wpay.domain.resp.wx.SpJspayCreateResp;
 import com.witon.wpay.domain.resp.wx.SpMicropayCreateResp;
 import com.witon.wpay.domain.resp.wx.SpScanCreateResp;
-import com.witon.wpay.domain.resp.wx.SpTradeCloseyResp;
+import com.witon.wpay.domain.resp.wx.SpTradeCloseResp;
 import com.witon.wpay.domain.resp.wx.SpTradeQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeRefundQueryResp;
 import com.witon.wpay.domain.resp.wx.SpTradeRefundResp;
 import com.witon.wpay.domain.resp.wx.SpTradeReverseResp;
-import com.witon.wpay.request.WxSpBillQueryReq;
-import com.witon.wpay.request.WxSpJspayCreateReq;
-import com.witon.wpay.request.WxSpMicropayCreateReq;
-import com.witon.wpay.request.WxSpScanCreateReq;
-import com.witon.wpay.request.WxSpTradeCloseReq;
-import com.witon.wpay.request.WxSpTradeQueryReq;
-import com.witon.wpay.request.WxSpTradeRefundQueryReq;
-import com.witon.wpay.request.WxSpTradeRefundReq;
-import com.witon.wpay.request.WxSpTradeReverseReq;
+import com.witon.wpay.request.wx.WxSpBillQueryReq;
+import com.witon.wpay.request.wx.WxSpJspayCreateReq;
+import com.witon.wpay.request.wx.WxSpMicropayCreateReq;
+import com.witon.wpay.request.wx.WxSpScanCreateReq;
+import com.witon.wpay.request.wx.WxSpTradeCloseReq;
+import com.witon.wpay.request.wx.WxSpTradeQueryReq;
+import com.witon.wpay.request.wx.WxSpTradeRefundQueryReq;
+import com.witon.wpay.request.wx.WxSpTradeRefundReq;
+import com.witon.wpay.request.wx.WxSpTradeReverseReq;
 
 /**
  * 
@@ -148,11 +148,11 @@ public class WxTest {
     public void test_trade_close() {
         try {
             WxSpTradeCloseReq request = new WxSpTradeCloseReq();
-            SpTradeCloseyReq c = new SpTradeCloseyReq();
+            SpTradeCloseReq c = new SpTradeCloseReq();
             c.setTradeNo("364c1568321a427292f4b9970f2a4c33");
 
             request.setBizReq(c);
-            WitonResponse<SpTradeCloseyResp> resp = client.exe(request);
+            WitonResponse<SpTradeCloseResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {

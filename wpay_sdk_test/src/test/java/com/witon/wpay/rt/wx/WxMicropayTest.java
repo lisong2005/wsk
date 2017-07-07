@@ -13,8 +13,8 @@ import com.witon.wpay.domain.req.wx.SpMicropayCreateReq;
 import com.witon.wpay.domain.req.wx.SpTradeReverseReq;
 import com.witon.wpay.domain.resp.wx.SpMicropayCreateResp;
 import com.witon.wpay.domain.resp.wx.SpTradeReverseResp;
-import com.witon.wpay.request.WxSpMicropayCreateReq;
-import com.witon.wpay.request.WxSpTradeReverseReq;
+import com.witon.wpay.request.wx.WxSpMicropayCreateReq;
+import com.witon.wpay.request.wx.WxSpTradeReverseReq;
 import com.witon.wpay.rt.RtAbstractTest;
 
 /**

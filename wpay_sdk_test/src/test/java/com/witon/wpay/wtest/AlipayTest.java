@@ -27,13 +27,13 @@ import com.witon.wpay.domain.resp.alipay.AliSpTradeCancelResp;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeQueryResp;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeRefundQueryResp;
 import com.witon.wpay.domain.resp.alipay.AliSpTradeRefundResp;
-import com.witon.wpay.request.AlipayBillQueryReq;
-import com.witon.wpay.request.AlipayMicropayCreateReq;
-import com.witon.wpay.request.AlipayScanCreateReq;
-import com.witon.wpay.request.AlipayTradeCancelReq;
-import com.witon.wpay.request.AlipayTradeQueryReq;
-import com.witon.wpay.request.AlipayTradeRefundQueryReq;
-import com.witon.wpay.request.AlipayTradeRefundReq;
+import com.witon.wpay.request.alipay.AlipayBillQueryReq;
+import com.witon.wpay.request.alipay.AlipayMicropayCreateReq;
+import com.witon.wpay.request.alipay.AlipayScanCreateReq;
+import com.witon.wpay.request.alipay.AlipayTradeCancelReq;
+import com.witon.wpay.request.alipay.AlipayTradeQueryReq;
+import com.witon.wpay.request.alipay.AlipayTradeRefundQueryReq;
+import com.witon.wpay.request.alipay.AlipayTradeRefundReq;
 
 /**
  * 

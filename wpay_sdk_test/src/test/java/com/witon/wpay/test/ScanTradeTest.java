@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpScanCreateReq;
 import com.witon.wpay.domain.resp.wx.SpScanCreateResp;
-import com.witon.wpay.request.WxSpScanCreateReq;
+import com.witon.wpay.request.wx.WxSpScanCreateReq;
 
 /**
  * 

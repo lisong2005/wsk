@@ -14,7 +14,7 @@ import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wx.SpJspayCreateReq;
 import com.witon.wpay.domain.resp.wx.SpJspayCreateResp;
-import com.witon.wpay.request.WxSpJspayCreateReq;
+import com.witon.wpay.request.wx.WxSpJspayCreateReq;
 import com.witon.wpay.rt.RtAbstractTest;
 import com.witon.wpay.util.DateUtil;
 

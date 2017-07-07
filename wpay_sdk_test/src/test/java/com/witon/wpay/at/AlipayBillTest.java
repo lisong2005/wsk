@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.alipay.AliSpBillQueryReq;
 import com.witon.wpay.domain.resp.alipay.AliSpBillQueryResp;
-import com.witon.wpay.request.AlipayBillQueryReq;
+import com.witon.wpay.request.alipay.AlipayBillQueryReq;
 import com.witon.wpay.test.AbstractTest;
 
 /**
