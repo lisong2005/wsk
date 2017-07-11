@@ -35,9 +35,6 @@ public class WftSpTradeRefundReq extends AbstractSpReq {
     @XmlElement(name = "op_user_id")
     private String            opUserId;
 
-    @XmlElement(name = "refund_account")
-    private String            refundAccount;
-
     /**
      * Getter method for property <tt>tradeNo</tt>.
      * 
@@ -108,24 +105,6 @@ public class WftSpTradeRefundReq extends AbstractSpReq {
      */
     public void setOpUserId(String opUserId) {
         this.opUserId = opUserId;
-    }
-
-    /**
-     * Getter method for property <tt>refundAccount</tt>.
-     * 
-     * @return property value of refundAccount
-     */
-    public String getRefundAccount() {
-        return refundAccount;
-    }
-
-    /**
-     * Setter method for property <tt>refundAccount</tt>.
-     * 
-     * @param refundAccount value to be assigned to property refundAccount
-     */
-    public void setRefundAccount(String refundAccount) {
-        this.refundAccount = refundAccount;
     }
 
 }
