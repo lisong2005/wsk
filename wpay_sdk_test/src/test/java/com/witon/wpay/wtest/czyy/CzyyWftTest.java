@@ -14,12 +14,15 @@ import com.witon.wpay.DefaultWitonClient;
 import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wft.WftSpJspayCreateReq;
+import com.witon.wpay.domain.req.wft.WftSpTradeCloseReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeQueryReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeRefundReq;
 import com.witon.wpay.domain.resp.wft.WftSpJspayCreateResp;
+import com.witon.wpay.domain.resp.wft.WftSpTradeCloseResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeQueryResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeRefundResp;
 import com.witon.wpay.request.wft.WftSpJspayCreateRequest;
+import com.witon.wpay.request.wft.WftSpTradeCloseRequest;
 import com.witon.wpay.request.wft.WftSpTradeQueryRequest;
 import com.witon.wpay.request.wft.WftSpTradeRefundRequest;
 
@@ -68,6 +71,23 @@ public class CzyyWftTest implements CZYYConstants {
 
             request.setBizReq(c);
             WitonResponse<WftSpTradeQueryResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_close() {
+        try {
+            WftSpTradeCloseRequest request = new WftSpTradeCloseRequest();
+            WftSpTradeCloseReq c = new WftSpTradeCloseReq();
+            c.setTradeNo("f4bac25bf87d4158bf1f4bf8fb932857");
+            c.setTradeNo("a9325bc204ab43e5a92f4b6734b88479");
+
+            request.setBizReq(c);
+            WitonResponse<WftSpTradeCloseResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {

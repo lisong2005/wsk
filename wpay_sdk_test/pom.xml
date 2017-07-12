@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>com.witon</groupId>
 			<artifactId>wpay-sdk</artifactId>
-			<version>1.0.0.2017-7-6</version>
+			<version>1.0.0.2017-7-12</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.json/json -->

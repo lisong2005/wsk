@@ -13,12 +13,15 @@ import org.slf4j.LoggerFactory;
 import com.witon.wpay.DefaultWitonClient;
 import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
+import com.witon.wpay.domain.req.wft.WftSpBillQueryReq;
 import com.witon.wpay.domain.req.wft.WftSpJspayCreateReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeQueryReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeRefundReq;
+import com.witon.wpay.domain.resp.wft.WftSpBillQueryResp;
 import com.witon.wpay.domain.resp.wft.WftSpJspayCreateResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeQueryResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeRefundResp;
+import com.witon.wpay.request.wft.WftSpBillQueryRequest;
 import com.witon.wpay.request.wft.WftSpJspayCreateRequest;
 import com.witon.wpay.request.wft.WftSpTradeQueryRequest;
 import com.witon.wpay.request.wft.WftSpTradeRefundRequest;
@@ -96,6 +99,23 @@ public class WftTest {
 
             request.setBizReq(c);
             WitonResponse<WftSpTradeRefundResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_bill() {
+        try {
+            WftSpBillQueryRequest request = new WftSpBillQueryRequest();
+            WftSpBillQueryReq c = new WftSpBillQueryReq();
+            c.setBillDate("20170707");
+            c.setBillType("SUCCESS");
+
+            request.setBizReq(c);
+            WitonResponse<WftSpBillQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {

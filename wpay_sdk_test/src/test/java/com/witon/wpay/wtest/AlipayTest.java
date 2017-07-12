@@ -100,7 +100,7 @@ public class AlipayTest {
         try {
             AlipayTradeQueryReq request = new AlipayTradeQueryReq();
             AliSpTradeQueryReq c = new AliSpTradeQueryReq();
-            c.setTradeNo("1ff49927-b792-4b2e-9c90-b6acbd27300b");
+            c.setTradeNo("7a0282c603e64b27809aa5af7f417a95");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeQueryResp> resp = client.exe(request);
@@ -116,8 +116,8 @@ public class AlipayTest {
         try {
             AlipayTradeRefundReq request = new AlipayTradeRefundReq();
             AliSpTradeRefundReq c = new AliSpTradeRefundReq();
-            c.setTradeNo("fc1445b253f845918e9871ba3da234ae");
-            c.setRefundNo("fc1445b253f845918e9871ba3da234ae");
+            c.setTradeNo("7a0282c603e64b27809aa5af7f417a95");
+            c.setRefundNo("7a0282c603e64b27809aa5af7f417a95");
             c.setRefundFee(1L);
 
             request.setBizReq(c);
@@ -134,7 +134,7 @@ public class AlipayTest {
         try {
             AlipayTradeRefundQueryReq request = new AlipayTradeRefundQueryReq();
             AliSpTradeRefundQueryReq c = new AliSpTradeRefundQueryReq();
-            c.setRefundNo("20170602x10000000000000000004981");
+            c.setRefundNo("7a0282c603e64b27809aa5af7f417a95");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeRefundQueryResp> resp = client.exe(request);
@@ -167,7 +167,7 @@ public class AlipayTest {
         try {
             AlipayTradeCancelReq request = new AlipayTradeCancelReq();
             AliSpTradeCancelReq c = new AliSpTradeCancelReq();
-            c.setTradeNo("5fa25164623a42e7a6dfce6fde7dca47");
+            c.setTradeNo("b00dc69420ce4009ab8b19f4123f6b9c");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeCancelResp> resp = client.exe(request);

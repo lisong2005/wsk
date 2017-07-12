@@ -133,7 +133,7 @@ public class WxTest {
         try {
             WxSpTradeQueryReq request = new WxSpTradeQueryReq();
             SpTradeQueryReq c = new SpTradeQueryReq();
-            c.setTradeNo("364c1568321a427292f4b9970f2a4c33");
+            c.setTradeNo("f32df67c33764c7b9fddf45f821bd262");
 
             request.setBizReq(c);
             WitonResponse<SpTradeQueryResp> resp = client.exe(request);
@@ -149,26 +149,10 @@ public class WxTest {
         try {
             WxSpTradeCloseReq request = new WxSpTradeCloseReq();
             SpTradeCloseReq c = new SpTradeCloseReq();
-            c.setTradeNo("364c1568321a427292f4b9970f2a4c33");
+            c.setTradeNo("f32df67c33764c7b9fddf45f821bd262");
 
             request.setBizReq(c);
             WitonResponse<SpTradeCloseResp> resp = client.exe(request);
-            logger.info("{}", resp);
-            logger.info("{}", resp.getBizResp());
-        } catch (Exception e) {
-            logger.error("", e);
-        }
-    }
-
-    @Test
-    public void test_refund_query() {
-        try {
-            WxSpTradeRefundQueryReq request = new WxSpTradeRefundQueryReq();
-            SpTradeRefundQueryReq c = new SpTradeRefundQueryReq();
-            c.setRefundNo("20170526010000000000000000000491");
-
-            request.setBizReq(c);
-            WitonResponse<SpTradeRefundQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
@@ -200,16 +184,32 @@ public class WxTest {
             WxSpTradeRefundReq request = new WxSpTradeRefundReq();
             SpTradeRefundReq c = new SpTradeRefundReq();
             c.setWxAppId("wx985bfeb7fc165525");
-            c.setWtTradeNo("20170426010000000000000000003241");
-            c.setRefundNo(UUID.randomUUID().toString());
-            c.setRefundFee(7L);
             c.setOpUserId("opUserId");
             c.setDeviceInfo("deviceInfo");
-            c.setTotalFee(10L);
+            c.setTotalFee(1L);
+            c.setTradeNo("f32df67c33764c7b9fddf45f821bd262");
+            c.setRefundNo("f32df67c33764c7b9fddf45f821bd262");
+            c.setRefundFee(1L);
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundResp> resp = client.exe(request);
 
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_refund_query() {
+        try {
+            WxSpTradeRefundQueryReq request = new WxSpTradeRefundQueryReq();
+            SpTradeRefundQueryReq c = new SpTradeRefundQueryReq();
+            c.setRefundNo("f32df67c33764c7b9fddf45f821bd262");
+
+            request.setBizReq(c);
+            WitonResponse<SpTradeRefundQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
