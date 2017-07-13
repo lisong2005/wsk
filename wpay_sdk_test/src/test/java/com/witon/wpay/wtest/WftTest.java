@@ -16,14 +16,17 @@ import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.wft.WftSpBillQueryReq;
 import com.witon.wpay.domain.req.wft.WftSpJspayCreateReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeQueryReq;
+import com.witon.wpay.domain.req.wft.WftSpTradeRefundQueryReq;
 import com.witon.wpay.domain.req.wft.WftSpTradeRefundReq;
 import com.witon.wpay.domain.resp.wft.WftSpBillQueryResp;
 import com.witon.wpay.domain.resp.wft.WftSpJspayCreateResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeQueryResp;
+import com.witon.wpay.domain.resp.wft.WftSpTradeRefundQueryResp;
 import com.witon.wpay.domain.resp.wft.WftSpTradeRefundResp;
 import com.witon.wpay.request.wft.WftSpBillQueryRequest;
 import com.witon.wpay.request.wft.WftSpJspayCreateRequest;
 import com.witon.wpay.request.wft.WftSpTradeQueryRequest;
+import com.witon.wpay.request.wft.WftSpTradeRefundQueryRequest;
 import com.witon.wpay.request.wft.WftSpTradeRefundRequest;
 
 /**
@@ -99,6 +102,22 @@ public class WftTest {
 
             request.setBizReq(c);
             WitonResponse<WftSpTradeRefundResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_refund_query() {
+        try {
+            WftSpTradeRefundQueryRequest request = new WftSpTradeRefundQueryRequest();
+            WftSpTradeRefundQueryReq c = new WftSpTradeRefundQueryReq();
+            c.setRefundNo("27c670dfb99f4b65b0e5f9a3ecddd168");
+
+            request.setBizReq(c);
+            WitonResponse<WftSpTradeRefundQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {

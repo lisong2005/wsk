@@ -64,8 +64,10 @@ public class AlipayTest {
             c.setBody("body");
             c.setNotifyUrl(NOTIFY_URL);
             c.setTotalFee(1L);
+            c.setTradeNo("887056a94c5c4dafa326eb94e6917afc");
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setAuthCode("288092010706437216");
+            c.setAuthCode("283666245370994639");
+            c.setAuthCode("284980966694026001");
 
             request.setBizReq(c);
             WitonResponse<AliSpMicropayCreateResp> resp = client.exe(request);
@@ -168,6 +170,8 @@ public class AlipayTest {
             AlipayTradeCancelReq request = new AlipayTradeCancelReq();
             AliSpTradeCancelReq c = new AliSpTradeCancelReq();
             c.setTradeNo("b00dc69420ce4009ab8b19f4123f6b9c");
+            c.setTradeNo("887056a94c5c4dafa326eb94e6917afc");
+            c.setTradeNo("05e22658d36d44ec83d951e86aaf93c6");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeCancelResp> resp = client.exe(request);
