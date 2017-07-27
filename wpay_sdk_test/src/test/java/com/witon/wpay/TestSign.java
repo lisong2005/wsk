@@ -4,12 +4,17 @@
  */
 package com.witon.wpay;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.witon.wpay.domain.resp.alipay.AliSpMicropayCreateResp;
+import com.witon.wpay.util.SignUtils;
+import com.witon.wpay.wtest.AlipayTest;
 
 /**
  * 
@@ -45,5 +50,30 @@ public class TestSign {
     @Test
     public void test_002() {
         logger.info("{}", String.format("%s", 111L));
+        logger.info("{}", new Date(1500617916833L));
     }
+
+    @Test
+    public void test_003() {
+        logger.info("");
+
+        String publicKey = AlipayTest.WITON_PUB_KEY;
+
+        WitonResponse<AliSpMicropayCreateResp> resp = new WitonResponse<>();
+        resp.setRespContent(
+            "{\"buyer_logon_id\":\"cyq***@126.com\",\"buyer_user_id\":\"2088102091573796\",\"total_fee\":1,\"wt_trade_no\":\"20170717x10000000000000000011401\",\"trade_no\":\"A00001003\",\"time_end\":\"20170717152007\",\"attach\":null,\"trade_state\":\"SUCCESS\",\"store_id\":null,\"terminal_id\":null,\"alipay_store_id\":null}");
+        resp.setCode("0000");
+        resp.setMsg("成功");
+        resp.setSub_code("SUCCESS");
+        resp.setSub_msg("成功");
+        resp.setSignType("RSA2");
+        resp.setTimestamp(1500369528573L);
+        resp.setSign(
+            "OVqGUgj6sDsh9HiRCnsulVTZLt/kVruxiHMkKHaCv7S5q9n87frXOLZFw3gaJoaN3knr4lI8cE8IypdODhOUBwbqyj9DkRCrG1L/WIkcj/8Jo0j5endhXOKVkWTKnEU5X25mGzSQ0xfC76l5DZSoZ93KeeNjPvtzw8MPcQpQXXJAuUMVYsw65r9xLPjJuev03AxY6QvLeloh7yI4i5QQpKm7jJGfe3NGH68w2aCPWIkl3/Y7fLIFyom2sezdm/VVfRVFyFZPfBn67ZDqh28eDU76KMMQ6LlqyXErYJXYdlK3pq/vUbFuTaHzVugyS7MiiWcWOghccCmx4JJO1zErKg==");
+
+        boolean b = SignUtils.verifySignRSA256(resp, resp.getSign(), publicKey);
+        logger.info("{}", b);
+
+    }
+
 }

@@ -27,8 +27,8 @@ public class AlipayRefundTest extends RtAbstractTest {
         try {
             AlipayTradeRefundReq request = new AlipayTradeRefundReq();
             AliSpTradeRefundReq c = new AliSpTradeRefundReq();
-            c.setTradeNo("7f2fa0545a0a41119ff0e3e06ca68211");
-            c.setRefundNo("7f2fa0545a0a41119ff0e3e06ca68211");
+            c.setTradeNo("160f1ab16d94424889d7c7f53fb9260f");
+            c.setRefundNo("160f1ab16d94424889d7c7f53fb9260f");
             c.setRefundFee(1L);
 
             request.setBizReq(c);
