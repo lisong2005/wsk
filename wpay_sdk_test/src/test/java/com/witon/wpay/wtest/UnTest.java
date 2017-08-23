@@ -14,11 +14,23 @@ import com.witon.wpay.DefaultWitonClient;
 import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
 import com.witon.wpay.domain.req.un.UnBillQueryReq;
+import com.witon.wpay.domain.req.un.UnMicropayCreateReq;
 import com.witon.wpay.domain.req.un.UnTradeCreateReq;
+import com.witon.wpay.domain.req.un.UnTradeQueryReq;
+import com.witon.wpay.domain.req.un.UnTradeRefundQueryReq;
+import com.witon.wpay.domain.req.un.UnTradeRefundReq;
 import com.witon.wpay.domain.resp.un.UnBillQueryResp;
+import com.witon.wpay.domain.resp.un.UnMicropayCreateResp;
 import com.witon.wpay.domain.resp.un.UnTradeCreateResp;
+import com.witon.wpay.domain.resp.un.UnTradeQueryResp;
+import com.witon.wpay.domain.resp.un.UnTradeRefundQueryResp;
+import com.witon.wpay.domain.resp.un.UnTradeRefundResp;
 import com.witon.wpay.request.un.UnionBillQueryReq;
+import com.witon.wpay.request.un.UnionMicropayCreateReq;
 import com.witon.wpay.request.un.UnionTradeCreateReq;
+import com.witon.wpay.request.un.UnionTradeQueryReq;
+import com.witon.wpay.request.un.UnionTradeRefundQueryReq;
+import com.witon.wpay.request.un.UnionTradeRefundReq;
 
 /**
  * 
@@ -69,6 +81,76 @@ public class UnTest {
 
             request.setBizReq(c);
             WitonResponse<UnBillQueryResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_micropay() {
+        try {
+            UnionMicropayCreateReq request = new UnionMicropayCreateReq();
+            UnMicropayCreateReq c = new UnMicropayCreateReq();
+            c.setNotifyUrl(NOTIFY_URL);
+            c.setBody("body");
+            c.setTotalFee(1L);
+            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
+            c.setAuthCode("134523112709866990");
+
+            request.setBizReq(c);
+            WitonResponse<UnMicropayCreateResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_query() {
+        try {
+            UnionTradeQueryReq request = new UnionTradeQueryReq();
+            UnTradeQueryReq c = new UnTradeQueryReq();
+            c.setTradeNo("6378135050ff4936b6f9e1015ca46843");
+
+            request.setBizReq(c);
+            WitonResponse<UnTradeQueryResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_refund() {
+        try {
+            UnionTradeRefundReq request = new UnionTradeRefundReq();
+            UnTradeRefundReq c = new UnTradeRefundReq();
+            c.setTradeNo("6378135050ff4936b6f9e1015ca46843");
+            c.setRefundNo("6378135050ff4936b6f9e1015ca46843");
+            c.setRefundFee(1L);
+
+            request.setBizReq(c);
+            WitonResponse<UnTradeRefundResp> resp = client.exe(request);
+            logger.info("{}", resp);
+            logger.info("{}", resp.getBizResp());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_trade_refund_query() {
+        try {
+            UnionTradeRefundQueryReq request = new UnionTradeRefundQueryReq();
+            UnTradeRefundQueryReq c = new UnTradeRefundQueryReq();
+            c.setRefundNo("6378135050ff4936b6f9e1015ca46843");
+
+            request.setBizReq(c);
+            WitonResponse<UnTradeRefundQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
