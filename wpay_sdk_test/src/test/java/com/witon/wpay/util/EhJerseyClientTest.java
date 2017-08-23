@@ -1,9 +1,24 @@
 package com.witon.wpay.util;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.net.URL;
+import java.net.URLConnection;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+
+import org.apache.commons.io.IOUtils;
 
 /**
  * Witontek.com.
@@ -61,4 +76,106 @@ public class EhJerseyClientTest {
             logger.error("", e);
         }
     }
+
+    @Test
+    public void test_proxy_NO() {
+        logger.info("");
+        try {
+
+            Client client = EhJerseyClient.getJerseyClient();
+            WebTarget target = client.target("https://www.google.com");
+
+            String restResult = target.request().get(String.class);
+
+            logger.info("{}", restResult);
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_proxy_() {
+        logger.info("");
+        try {
+            //            System.setProperty("http.proxyHost", "127.0.0.1");
+            //            System.setProperty("http.proxyPort", "1080");
+
+            System.setProperty("https.proxyHost", "127.0.0.1");
+            System.setProperty("https.proxyPort", "1080");
+
+            //            System.setProperty("socksProxyHost", "127.0.0.1");
+            //            System.setProperty("socksProxyPort", "1080");
+
+            Client client = EhJerseyClient.getJerseyClient();
+            WebTarget target = client.target("https://www.google.com");
+
+            String restResult = target.request().get(String.class);
+
+            logger.info("{}", restResult);
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    @Test
+    public void test_proxy_2() {
+        logger.info("");
+        try {
+            SocketAddress addr = new InetSocketAddress("127.0.0.1", 1080);
+            Proxy proxy;
+            proxy = new Proxy(Proxy.Type.SOCKS, addr);
+            proxy = new Proxy(Proxy.Type.HTTP, addr);
+            URL url = new URL("https://www.google.com");
+            URLConnection conn = url.openConnection(proxy);
+
+            InputStream in = conn.getInputStream();
+            logger.info("{}", in);
+
+            StringWriter sw = new StringWriter();
+            IOUtils.copy(in, sw, "utf-8");
+            logger.info("{}", sw.toString());
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
+    // =============================================
+    // =============================================
+    // =============================================
+
+    @Test
+    public void test_proxy_socket() {
+
+        logger.info("");
+        try {
+            SocketAddress addr = new InetSocketAddress("127.0.0.1", 1080);
+            Proxy proxy = new Proxy(Proxy.Type.SOCKS, addr);
+            Socket socket = new Socket(proxy);
+            InetSocketAddress dest = new InetSocketAddress("www.google.com", 443);
+            socket.connect(dest);
+
+            logger.info("{}", socket);
+            BufferedReader br = new BufferedReader(
+                new InputStreamReader(socket.getInputStream(), "utf-8"));
+            BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(socket.getOutputStream(), "utf-8"));
+
+            logger.info("xxx");
+            bw.write("GET https://www.google.com\n\n");
+            bw.flush();
+
+            for (;;) {
+                String ss = br.readLine();
+                if (ss == null) {
+                    break;
+                }
+                System.out.println(ss);
+            }
+
+            IOUtils.closeQuietly(socket);
+        } catch (Exception e) {
+            logger.error("", e);
+        }
+    }
+
 }

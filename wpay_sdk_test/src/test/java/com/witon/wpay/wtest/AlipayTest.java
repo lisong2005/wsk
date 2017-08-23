@@ -62,10 +62,12 @@ public class AlipayTest {
             AliSpMicropayCreateReq c = new AliSpMicropayCreateReq();
             c.setSubject("条码支付");
             c.setScene("bar_code");
-            c.setTotalFee(1L);
+            c.setTotalFee(10L);
+            c.setTradeNo("decde06e197b49c0b3e1772969e7d51f");
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setTradeNo("e2ce21f4174f42dfa1117a9de32beead");
-            c.setAuthCode("285996177600127622");
+            c.setTradeNo("95bfc5254772409d83ae5855f14b882b");
+            c.setAuthCode("287751829465303197");
+            c.setAuthCode("285060977774134002");
 
             request.setBizReq(c);
             WitonResponse<AliSpMicropayCreateResp> resp = client.exe(request);
@@ -116,9 +118,9 @@ public class AlipayTest {
         try {
             AlipayTradeRefundReq request = new AlipayTradeRefundReq();
             AliSpTradeRefundReq c = new AliSpTradeRefundReq();
-            c.setTradeNo("e2ce21f4174f42dfa1117a9de32beead");
-            c.setRefundNo("e2ce21f4174f42dfa1117a9de32beead");
-            c.setRefundFee(1L);
+            c.setTradeNo("95bfc5254772409d83ae5855f14b882b");
+            c.setRefundNo("95bfc5254772409d83ae5855f14b8823");
+            c.setRefundFee(9L);
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeRefundResp> resp = client.exe(request);
@@ -163,6 +165,14 @@ public class AlipayTest {
     }
 
     @Test
+    public void test_loop() {
+        int max = 1024;
+        for (int i = 0; i < max; i++) {
+            test_bill_query();
+        }
+    }
+
+    @Test
     public void test_trade_cancel() {
         try {
             AlipayTradeCancelReq request = new AlipayTradeCancelReq();
@@ -170,6 +180,7 @@ public class AlipayTest {
             c.setTradeNo("b00dc69420ce4009ab8b19f4123f6b9c");
             c.setTradeNo("887056a94c5c4dafa326eb94e6917afc");
             c.setTradeNo("05e22658d36d44ec83d951e86aaf93c6");
+            c.setTradeNo("95bfc5254772409d83ae5855f14b882b");
 
             request.setBizReq(c);
             WitonResponse<AliSpTradeCancelResp> resp = client.exe(request);

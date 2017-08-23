@@ -4,6 +4,7 @@
  */
 package com.witon.wpay;
 
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -74,6 +75,18 @@ public class TestSign {
         boolean b = SignUtils.verifySignRSA256(resp, resp.getSign(), publicKey);
         logger.info("{}", b);
 
+    }
+
+    @Test
+    public void test_11111() {
+        String s = "T4NJx%2FVgocRsLyQnrMZLyuQQkFzMAxQjdqyzf6pM%2Fcg%3D";
+        try {
+            logger.info("{}", URLDecoder.decode(s, "utf-8"));
+            logger.info("{}", URLDecoder.decode(s, "gbk"));
+            logger.info("{}", URLDecoder.decode(s, "ISO-8859-1"));
+        } catch (Exception e) {
+            logger.error("", e);
+        }
     }
 
 }

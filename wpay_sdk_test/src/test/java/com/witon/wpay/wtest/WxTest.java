@@ -115,9 +115,10 @@ public class WxTest {
 
             c.setBody("body");
             c.setCreateIp("58.240.244.130");
-            c.setTotalFee(1L);
+            c.setTotalFee(10L);
             c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setAuthCode("130236155480065064");
+            c.setTradeNo("a2e77ae8df6f450984e1f55e6e97d364");
+            c.setAuthCode("130149103455451315");
 
             request.setBizReq(c);
             WitonResponse<SpMicropayCreateResp> resp = client.exe(request);
@@ -167,6 +168,8 @@ public class WxTest {
             SpTradeReverseReq c = new SpTradeReverseReq();
 
             c.setTradeNo("b3a832cf-5290-4aab-9e00-dcc64cd0f613");
+            c.setTradeNo("e9f87a119f404815b5eeb1d32648915d");
+            c.setTradeNo("a2e77ae8df6f450984e1f55e6e97d364");
 
             request.setBizReq(c);
             WitonResponse<SpTradeReverseResp> resp = client.exe(request);
@@ -183,13 +186,14 @@ public class WxTest {
 
             WxSpTradeRefundReq request = new WxSpTradeRefundReq();
             SpTradeRefundReq c = new SpTradeRefundReq();
-            c.setWxAppId("wx985bfeb7fc165525");
+            //            c.setWxAppId("wx985bfeb7fc165525");
+            //            c.setDeviceInfo("deviceInfo");
+            c.setTradeNo("a2e77ae8df6f450984e1f55e6e97d364");
+            c.setRefundNo("a2e77ae8df6f450984e1f55e6e97d364");
+            c.setRefundNo("a2e77ae8df6f450984e1f55e6e97d362");
             c.setOpUserId("opUserId");
-            c.setDeviceInfo("deviceInfo");
-            c.setTotalFee(1L);
-            c.setTradeNo("f32df67c33764c7b9fddf45f821bd262");
-            c.setRefundNo("f32df67c33764c7b9fddf45f821bd262");
-            c.setRefundFee(1L);
+            c.setTotalFee(10L);
+            c.setRefundFee(9L);
 
             request.setBizReq(c);
             WitonResponse<SpTradeRefundResp> resp = client.exe(request);

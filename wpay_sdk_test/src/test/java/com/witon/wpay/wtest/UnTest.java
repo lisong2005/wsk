@@ -13,20 +13,19 @@ import org.slf4j.LoggerFactory;
 import com.witon.wpay.DefaultWitonClient;
 import com.witon.wpay.WitonClient;
 import com.witon.wpay.WitonResponse;
-import com.witon.wpay.domain.req.up.UpSpMicropayCreateReq;
-import com.witon.wpay.domain.req.up.UpSpScanCreateReq;
-import com.witon.wpay.domain.resp.up.UpSpMicropayCreateResp;
-import com.witon.wpay.domain.resp.up.UpSpScanCreateResp;
-import com.witon.wpay.request.up.UpSpMicropayCreateRequest;
-import com.witon.wpay.request.up.UpSpScanCreateRequest;
+import com.witon.wpay.domain.req.un.UnBillQueryReq;
+import com.witon.wpay.domain.req.un.UnTradeCreateReq;
+import com.witon.wpay.domain.resp.un.UnBillQueryResp;
+import com.witon.wpay.domain.resp.un.UnTradeCreateResp;
+import com.witon.wpay.request.un.UnionBillQueryReq;
+import com.witon.wpay.request.un.UnionTradeCreateReq;
 
 /**
  * 
  * @author song.li@witontek.com
- * @version $Id: UpTest.java, v 0.1 2017年7月27日 上午8:20:48 song.li@witontek.com Exp $
+ * @version $Id: UnTest.java, v 0.1 2017年8月15日 下午4:54:07 song.li@witontek.com Exp $
  */
-public class UpTest {
-
+public class UnTest {
     public final Logger          logger        = LoggerFactory.getLogger(getClass());
 
     public static String         WITON_PUB_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtHh6AQtjkLHEFbeiqr/kPozvF3WWDJH5NGuDb4USU2Hj/qidV6AB5usUpDJiAw3kYeTlQmka6nkWiuSFmgy0OmTTHOgAgBif0BtxV2jtDTjo+j/X4Lkd2ZG5AGGFHJXX3G/G11++f7pJbt3jUH2BdtneOCKbNL4hINZrsPKtnRhTto1cXX/FZdzgihVCq0jOAe5E8UIU2gdwV1TgY70URUw3UkFaRQB9KQjqQ25s8Hx6qYgBdepIgXpYzzJZGYGQa9dYifRIGmhCNtTfiRG0/pnWWw+ulP+xs3XcmdUnOpSQzB54rOo76Yz4vKegOxcy8LNxKi+EJYGrJOIp7uYzxQIDAQAB";
@@ -41,18 +40,17 @@ public class UpTest {
         YOUR_PRI_KEY2, GATEWAY_URL, PID);
 
     @Test
-    public void test_qrcreate_trade_create() {
+    public void test_trade_create() {
         try {
-            UpSpScanCreateRequest request = new UpSpScanCreateRequest();
-            UpSpScanCreateReq c = new UpSpScanCreateReq();
-            c.setSubject("qr");
-            c.setTotalFee(1L);
-            c.setTradeNo("e2ce21f4174f42dfa1117a9de32beead");
-            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
+            UnionTradeCreateReq request = new UnionTradeCreateReq();
+            UnTradeCreateReq c = new UnTradeCreateReq();
+            c.setBody("iphone6s");
             c.setNotifyUrl(NOTIFY_URL);
+            c.setTotalFee(111111L);
+            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
 
             request.setBizReq(c);
-            WitonResponse<UpSpScanCreateResp> resp = client.exe(request);
+            WitonResponse<UnTradeCreateResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {
@@ -61,19 +59,16 @@ public class UpTest {
     }
 
     @Test
-    public void test_micropay_trade_create() {
+    public void test_bill_query() {
         try {
-            UpSpMicropayCreateRequest request = new UpSpMicropayCreateRequest();
-            UpSpMicropayCreateReq c = new UpSpMicropayCreateReq();
-            c.setSubject("qr");
-            c.setTotalFee(1L);
-            c.setTradeNo(UUID.randomUUID().toString().replaceAll("-", ""));
-            c.setNotifyUrl(NOTIFY_URL);
-
-            c.setAuthCode("xxx");
+            UnionBillQueryReq request = new UnionBillQueryReq();
+            UnBillQueryReq c = new UnBillQueryReq();
+            c.setBillDate("20170602");
+            c.setBillDate("20170814");
+            c.setBillType("SUCCESS");
 
             request.setBizReq(c);
-            WitonResponse<UpSpMicropayCreateResp> resp = client.exe(request);
+            WitonResponse<UnBillQueryResp> resp = client.exe(request);
             logger.info("{}", resp);
             logger.info("{}", resp.getBizResp());
         } catch (Exception e) {

@@ -40,6 +40,7 @@ public class SpMicropayCreateReq extends AbstractSpReq {
     private long              totalFee;
 
     @XmlElement(name = "create_ip")
+    @Deprecated
     private String            createIp;
 
     @XmlElement(name = "goods_tag")
@@ -53,6 +54,9 @@ public class SpMicropayCreateReq extends AbstractSpReq {
 
     @XmlElement(name = "prod_tag")
     private String            prodTag;
+
+    @XmlElement(name = "notify_url")
+    private String            notifyUrl;
 
     /**
      * Getter method for property <tt>wxAppId</tt>.
@@ -203,6 +207,7 @@ public class SpMicropayCreateReq extends AbstractSpReq {
      * 
      * @return property value of createIp
      */
+    @Deprecated
     public String getCreateIp() {
         return createIp;
     }
@@ -212,6 +217,7 @@ public class SpMicropayCreateReq extends AbstractSpReq {
      * 
      * @param createIp value to be assigned to property createIp
      */
+    @Deprecated
     public void setCreateIp(String createIp) {
         this.createIp = createIp;
     }
@@ -268,6 +274,24 @@ public class SpMicropayCreateReq extends AbstractSpReq {
      */
     public void setLimitPay(String limitPay) {
         this.limitPay = limitPay;
+    }
+
+    /**
+     * Getter method for property <tt>notifyUrl</tt>.
+     * 
+     * @return property value of notifyUrl
+     */
+    public String getNotifyUrl() {
+        return notifyUrl;
+    }
+
+    /**
+     * Setter method for property <tt>notifyUrl</tt>.
+     * 
+     * @param notifyUrl value to be assigned to property notifyUrl
+     */
+    public void setNotifyUrl(String notifyUrl) {
+        this.notifyUrl = notifyUrl;
     }
 
 }

@@ -32,6 +32,27 @@ public class SpTradeReverseReq extends AbstractSpReq {
     @XmlElement(name = "wt_trade_no")
     private String            wtTradeNo;
 
+    @XmlElement(name = "reverse_no")
+    private String            reverseNo;
+
+    /**
+     * Getter method for property <tt>reverseNo</tt>.
+     * 
+     * @return property value of reverseNo
+     */
+    public String getReverseNo() {
+        return reverseNo;
+    }
+
+    /**
+     * Setter method for property <tt>reverseNo</tt>.
+     * 
+     * @param reverseNo value to be assigned to property reverseNo
+     */
+    public void setReverseNo(String reverseNo) {
+        this.reverseNo = reverseNo;
+    }
+
     /**
      * Getter method for property <tt>wxAppId</tt>.
      * 
